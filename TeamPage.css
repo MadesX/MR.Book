@@ -1,0 +1,123 @@
+﻿:root {
+    --primary: #004d99;
+    --accent: #f2f2f2;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--accent);
+    color: #333;
+}
+
+header {
+    background: var(--primary);
+    color: #fff;
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+nav {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1.5rem 0;
+}
+
+    nav a {
+        background: #fff;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        color: var(--primary);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+        nav a:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+section {
+    padding: 1rem 2rem;
+    text-align: center
+}
+
+#contact {
+    max-width: 600px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+    #contact.hidden {
+        display: none;
+    }
+
+.toggle-btn {
+    display: inline-block;
+    margin: 0 auto 1rem;
+    padding: 0.5rem 1rem;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    margin: 2rem 0;
+    padding: 0 1rem;
+}
+
+    footer object {
+        border: 1px solid #ccc;
+        width: 100%;
+        height: 500px;
+        margin-bottom: 1rem;
+    }
+
+    footer a.doc-link {
+        display: inline-block;
+        margin: 0.5rem 0;
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+/* Media Queries */
+@media (min-width: 769px) {
+    nav {
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 1.2rem;
+    }
+
+    nav a {
+        flex: 1 0 40%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+        nav a {
+            width: 80%;
+        }
+
+    footer object {
+        height: 300px;
+    }
+}

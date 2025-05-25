@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <title>MRY – Team Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="TeamPage.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <h1>Holcaron Archive – Team</h1>
+    </header>
+
+    <nav>
+        <a href="PersonalPage_Ron.html">Ron's Page</a>
+        <a href="PersonalPage_Matan.html">Matan's Page</a>
+        <a href="PersonalPage_Yuval.html">Yuval's Page</a>
+    </nav>
+
+    <section>
+        <button class="toggle-btn" onclick="toggleContact()">Show/Hide Contact Info</button>
+        <div id="contact" class="hidden">
+            <h2>Contact the Team Leader</h2>
+            <p>Name: Ron Haba</p>
+            <p>Email: <a href="mailto:ron@example.com">ron@example.com</a></p>
+            <p>Phone: 052‑1234567</p>
+        </div>
+    </section>
+
+    <footer>
+        <h2>Project Proposal</h2>      
+        <!-- Link to DOCX for Word users -->
+        <p>
+            <a href="ISEW_EX1_PartA.pdf" target="_blank" class="doc-link">
+                Download Project Proposal (.PDF)
+            </a>
+        </p>
+    </footer>
+
+    <script>
+        function toggleContact() {
+            document.getElementById('contact').classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ron’s Personal Page</title>
+    <link href="PersonalPage.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Header with profile pic and name -->
+    <header>
+        <img src="images/ron_profile_pic.jpg" alt="Ron’s Profile Picture" class="profile-pic-header" />
+        <h1>Ron’s Personal Page</h1>
+    </header>
+
+    <main>
+        <!-- Description about me -->
+        <div class="description">
+            <p>Hey, my name is Ron. I'm studying engineering and passionate about technology and sports.</p>
+        </div>
+
+        <!-- Contact  -->
+        <div class="contact">
+            <h2>Contact Me</h2>
+            <p>Email: ron@example.com</p>
+            <p>Phone: 053111111</p>
+        </div>
+
+        <!-- Button for Show Date & Time -->
+        <div style="text-align:center; margin-top: 20px;">
+            <button onclick="showDateTime()">Show Date & Time</button>
+        </div>
+    </main>
+
+    <script>
+        // Function to show the current date and time
+        function showDateTime() {
+            const date = new Date();
+            alert("Current Date & Time: " + date.toLocaleString());
+        }
+    </script>
+</body>
+</html>

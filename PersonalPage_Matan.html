@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matan’s Personal Page</title>
+    <link href="PersonalPage.css" rel="stylesheet" />
+</head>
+<body>
+    <!-- Header with profile pic and name -->
+    <header>
+        <img src="images/matan_profile_pic.jpg" style="width:70px" />
+        <h1>Matan’s Personal Page</h1>
+    </header>
+
+    <main>
+        <!-- Description about me -->
+        <div class="description">
+            <p>
+                Third‑year Computer Engineering student at Ruppin Academic Center, exited about both software and hardware. <br>
+                Still looking for a job :)
+            </p>
+        </div>
+
+        <!-- Toggle button -->
+        <div style="text-align:center; margin-top:20px;">
+            <button id="toggle-btn" style="padding:8px 12px; font-size:16px; cursor:pointer;">
+                Show/Hide Contact Info
+            </button>
+        </div>
+
+        <!-- Contact  -->
+        <div class="contact" id="contact-info">
+            <h2>Contact Me</h2>
+            <p>Email: <a href="mailto:matan963@gmail.com">matan963@gmail.com</a></p>
+            <p>Phone: +972-525642529</p>
+        </div>
+    </main>
+
+    <script>
+        const btn = document.getElementById('toggle-btn');
+        const contact = document.getElementById('contact-info');
+
+        btn.addEventListener('click', () => {
+            contact.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
