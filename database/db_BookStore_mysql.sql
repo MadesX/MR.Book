@@ -13,6 +13,7 @@ CREATE TABLE book (
     picture VARCHAR(255),
     language CHAR(1) CHECK(language IN ('H', 'E')),
     stock SMALLINT DEFAULT 0 CHECK(stock >= 0),
+	purchaseNum int DEFAULT 0,
 	recommend bit DEFAULT 0
 );
 
@@ -30,10 +31,18 @@ CREATE TABLE `user` (
     lname NVARCHAR(50) NOT NULL,
     dateOfBirth DATE NOT NULL,
     userName NVARCHAR(50) UNIQUE NOT NULL,
-    password NVARCHAR(255) NOT NULL,
+    password VARCHAR(50) NOT NULL,
     gender CHAR(1) CHECK (gender IN ('M', 'F')),
-    email VARCHAR(50) NOT NULL UNIQUE,
-    phone CHAR(10) UNIQUE,
+    email VARCHAR(50) NOT NULL UNIQUE CHECK (email REGEXP '^[^@]+@[^@]+\\.[^@]+$'),
+    phone CHAR(10) UNIQUE CHECK (phone REGEXP '^0[0-9]{9}$'),
+    country NVARCHAR(50),
+    website NVARCHAR(255) CHECK (website LIKE 'https://%'),
+    favoriteNumber INT CHECK (favoriteNumber > 0),
+    favoriteColor VARCHAR(7) CHECK (favoriteColor REGEXP '^#[0-9A-Fa-f]{6}$'),
+    contactTime TIME,
+    profilePicture NVARCHAR(255),
+    about NVARCHAR(255),
+	rating SMALLINT CHECK (rating >= 0 AND rating <= 10),
     
     CHECK (
         CHAR_LENGTH(password) >= 8 AND
@@ -41,11 +50,9 @@ CREATE TABLE `user` (
         password REGEXP '[a-z]' AND
         password REGEXP '[A-Z]' AND
         password REGEXP '[!@#$%^&*]'
-    ),
-    
-    CHECK (email REGEXP '^[^@]+@[^@]+\\.[^@]+$'),
-    CHECK (phone REGEXP '^0[0-9]{9}$')
+    )
 );
+
 
 
 CREATE TABLE address (
