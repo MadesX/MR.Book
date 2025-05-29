@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link href="Login1.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="login-container">
+        <img src="images/logo2.png" alt="לוגו האתר" id="logo">
+        <h1>ברוכים הבאים</h1>
+        <h2>התחברות</h2>
+        <form action="Login1.php" id="loginForm" method="post">
+            <input type="text" id="username" placeholder="שם משתמש" name="username" required>
+            <input type="password" id="password" placeholder="סיסמא" name="password" required>
+            <button type="submit">התחבר</button>
+        </form>
+        <button onclick="window.location.href = 'index1.php';">המשך כאורח</button>
+        <button onclick="window.location.href = 'registration.html';">הירשם</button>
+    </div>
+
+    <div class="footer">
+        <p>ליצירת קשר: bookstore@example.com | טלפון: 03-5551234</p>
+    </div>
+</body>
+</html>
