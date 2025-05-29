@@ -3,7 +3,7 @@ INSERT INTO categories (category) VALUES
 ('SF'), ('F'), ('R'), ('B'), ('Hi'), ('Hr'), ('M'), ('T'), ('A'), ('K'), ('C');
 
 -- Users
-INSERT INTO `user` (fname, lname, dateOfBirth, userName, password, gender, email, phone, country, website, favoriteNumber, favoriteColor, contactTime, profilePicture, about) VALUES
+INSERT INTO `user` (fname, lname, dateOfBirth, userName, password, gender, email, phone, country, website, favoriteNumber, favoriteColor, contactTime, profilePicture, about, rating) VALUES
 ('Alice', 'Smith', '1990-04-15', 'asmith', 'Alice@2023!', 'F', 'alice26@example.com', '0123456789', 'USA', 'https://aliceblog.com', 7, '#FF5733', '09:30:00', 'alice_profile.jpg', 'Love to travel and write.', 8),
 ('Bob', 'Johnson', '1985-11-02', 'bobbyJ', 'B0b@Secure!', 'M', 'bob.j@example.org', '0987654321', 'Canada', 'https://bobjohnson.dev', 12, '#33FF99', '14:45:00', '/images/bob_pic.png', 'Software engineer and guitarist.', 10),
 ('Clara', 'Lee', '1995-06-25', 'claralee', 'Clar@2024!', 'F', 'clara.lee@example.net', '0212345678', 'Australia', 'https://claralee.io', 5, '#4455FF', '08:15:00', 'clara.png', 'Digital artist and coffee lover.', 3),
@@ -20,10 +20,20 @@ INSERT INTO address (userID, city, street, houseNumber, zipCode) VALUES
 (3, 'Haifa', 'Carmel', '5', '2345678');
 
 -- Books
-INSERT INTO book (title, auther, price, intro, picture, language, stock) VALUES
-('Dune', 'Frank Herbert', 80, 'A sci-fi classic about a desert planet.', 'dune.jpg', 'E', 10, 50, 1),
-('Harry Potter', 'J.K. Rowling', 60, 'A young wizard''s adventures.', 'hp.jpg', 'E', 5, 200, 0),
-('הארי פוטר', 'ג׳יי קיי רולינג', 70, 'הרפתקאות קוסם צעיר.', 'hp_heb.jpg', 'H', 4, 10, 1);
+INSERT INTO book (title, auther, price, intro, picture, `language`, stock, purchaseNum, recommend) VALUES
+('Dune', 'Frank Herbert', 80, 'A sci-fi classic about a desert planet.', 'https://m.media-amazon.com/images/M/MV5BNWIyNmU5MGYtZDZmNi00ZjAwLWJlYjgtZTc0ZGIxMDE4ZGYwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg', 'E', 10, 50, 1),
+('Harry Potter', 'J.K. Rowling', 60, 'A young wizard''s adventures.', 'https://m.media-amazon.com/images/M/MV5BNGJhM2M2MWYtZjIzMC00MDZmLThkY2EtOWViMDhhYjRhMzk4XkEyXkFqcGc@._V1_.jpg', 'E', 5, 200, 0),
+('הארי פוטר', 'ג׳יי קיי רולינג', 70, 'הרפתקאות קוסם צעיר.', 'https://m.media-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_FMjpg_UX1000_.jpg', 'H', 4, 10, 1),
+('1984', 'George Orwell', 55, 'A dystopian novel about totalitarianism.', 'https://m.media-amazon.com/images/I/61NAx5pd6XL._AC_UF1000,1000_QL80_.jpg', 'E', 8, 120, 1),
+('The Hobbit', 'J.R.R. Tolkien', 65, 'A fantasy adventure before The Lord of the Rings.', 'https://m.media-amazon.com/images/I/71jD4jMityL._AC_UF1000,1000_QL80_.jpg', 'E', 7, 90, 1),
+('To Kill a Mockingbird', 'Harper Lee', 50, 'A story of racial injustice and childhood.', 'mockingbird.jpg', 'E', 6, 75, 0),
+('Pride and Prejudice', 'Jane Austen', 45, 'A romantic classic set in 19th-century England.', 'pride.jpg', 'E', 9, 60, 0),
+('הנסיך הקטן', 'אנטואן דה סנט-אכזופרי', 40, 'סיפור פילוסופי ונוגע ללב.', 'https://www.am-oved.co.il/Media/Uploads/%D7%A2%D7%98%D7%99%D7%A4%D7%94_%D7%94%D7%A0%D7%A1%D7%99%D7%9A_%D7%97%D7%92%D7%99%D7%92%D7%99(2)_jpg.webp', 'H', 6, 35, 1),
+('מלחמה ושלום', 'לב טולסטוי', 85, 'אפוס היסטורי רוסי על מלחמה, אהבה וגורל.', 'warpeace_heb.jpg', 'H', 3, 20, 1),
+('Sapiens', 'Yuval Noah Harari', 70, 'A brief history of humankind.', 'https://m.media-amazon.com/images/I/61ZKK6Y1nFL._AC_UF1000,1000_QL80_.jpg', 'E', 10, 150, 1),
+('צופן דה וינצ׳י', 'דן בראון', 60, 'מותחן מסתורין היסטורי מודרני.', 'da_vinci_heb.jpg', 'H', 5, 55, 0),
+('Game of Thrones', 'George R.R. Martin', 75, 'A fantasy saga of power and betrayal.', 'https://m.media-amazon.com/images/I/71Jzezm8CBL.jpg', 'E', 4, 110, 1);
+
 
 -- Book Categories
 INSERT INTO book_categories (bookID, category) VALUES
