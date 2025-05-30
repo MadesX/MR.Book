@@ -82,6 +82,7 @@ nav ul {
     flex-direction: row-reverse;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 nav li {
@@ -98,6 +99,10 @@ nav a {
     nav a:hover {
         background-color: #303f9f;
     }
+
+#nav-admin {
+    margin-top: -20px;
+}
 
 @media (max-width: 768px) {
     .header-right a img {
