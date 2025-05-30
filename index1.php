@@ -1,14 +1,15 @@
 ﻿<!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MR Book - Home</title>
-    <link href="HomePage1.css" rel="stylesheet" />
-    <link href="header1.css" rel="stylesheet" />
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>MR Book - Home</title>
+	<link href="HomePage1.css" rel="stylesheet" />
+	<link href="header1.css" rel="stylesheet" />
+	<link href="footer.css" rel="stylesheet" />
 </head>
 <body>
-    <div id="header-placeholder"></div>
+	<div id="header-placeholder"></div>
 
 	<?php
 	$servername = "sql206.byethost16.com";
@@ -18,7 +19,7 @@
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
-    $conn->set_charset("utf8");     // or "utf8mb4"                           remove this later
+    	$conn->set_charset("utf8mb4");
 
 	// Check connection
 	if ($conn->connect_error) {
@@ -31,7 +32,7 @@
 	$recommended = $conn->query($sql_recommended);
 
 	echo "<main>";
-    echo "<section><h2 class='section-title'>ספרים רבי מכר</h2><div class='books-row'>";
+    	echo "<section><h2 class='section-title'>ספרים רבי מכר</h2><div class='books-row'>";
 	if ($bestSellers->num_rows > 0) {
 		while($row = $bestSellers->fetch_assoc()) {
 			echo "<div class='book'><img src=" . $row["picture"] . " alt='Cover Image'><div class='book-details'>
@@ -39,9 +40,9 @@
 			<button onclick='alert()'>פרטים נוספים</button></div></div>";
 		}
 	}
-    echo "</div></section>";
+    	echo "</div></section>";
 
-    echo "<section><h2 class='section-title'>ספרים מומלצים</h2><div class='books-row'>";
+    	echo "<section><h2 class='section-title'>ספרים מומלצים</h2><div class='books-row'>";
 	if ($recommended->num_rows > 0) {
 		while($row = $recommended->fetch_assoc()) {
 			echo "<div class='book'><img src=" . $row["picture"] . " alt='Cover Image'><div class='book-details'>
@@ -49,17 +50,15 @@
 			<button onclick='alert()'>פרטים נוספים</button></div></div>";
 		}
 	}
-    echo "</div></section>";
+    	echo "</div></section>";
 	echo "</main>";
 	
 	$conn->close();
 	?>
 
-    <footer>
-        <p>ליצירת קשר: bookstore@example.com | טלפון: 03-5551234</p>
-    </footer>
-
-    <script src="HomePage1.js"></script>
+	<footer></footer>
 	
+    	<script src="footer.js"></script>
+	<script src="HomePage1.js"></script>
 </body>
 </html>
