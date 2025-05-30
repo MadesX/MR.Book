@@ -18,4 +18,10 @@ fetch('header1.html')    // Load the header dynamically
                     document.getElementById('header-placeholder').innerHTML += data2;
             });
         }
+
+        if (session_name != null) {
+            const login = document.getElementById("login");
+            login.href = 'logout.php';
+            login.title = 'התנתק';
+        }
     });
