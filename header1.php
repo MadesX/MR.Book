@@ -10,7 +10,8 @@ fetch('header1.html')    // Load the header dynamically
         const name = session_name != null ? session_name : "אורח";
         greeting.textContent = `שלום ${name}`;
 
-        if (name == "Administrator") {
+        const session_id = <?php echo json_encode($_SESSION['user_id'] ?? null); ?>;
+        if (session_id != null && session_id == 0) {
             fetch('navAdmin.html')
                 .then(response2 => response2.text())
                 .then(data2 => {
