@@ -100,10 +100,6 @@ nav a {
     }
 
 @media (max-width: 768px) {
-    #logo {
-        height: 100px;
-    }
-
     .header-right a img {
         width: 24px;
         height: 24px;
