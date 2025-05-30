@@ -53,7 +53,11 @@ CREATE TABLE `user` (
     )
 );
 
-
+CREATE TABLE `admin` (
+    userID INT PRIMARY KEY,
+    userName NVARCHAR(50),
+    password VARCHAR(50)
+);
 
 CREATE TABLE address (
     userID INT PRIMARY KEY,
