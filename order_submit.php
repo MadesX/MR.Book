@@ -22,7 +22,7 @@ $conn->query($sql);
 $conn->close();
 
 echo "<script>
-		alert('Your order was completed successfully');
+		alert('הזמנתך הושלמה בהצלחה');
 		window.location.href = 'index1.php';
 	  </script>";
 exit();
