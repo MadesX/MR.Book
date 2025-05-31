@@ -52,7 +52,7 @@ INSERT INTO wish_list (userID, bookID) VALUES
 
 -- Shopping Carts
 INSERT INTO shopping_cart (userID) VALUES
-(1), (2), (3);
+(0), (1), (2), (3), (4), (5), (6), (7), (8);
 
 -- Cart Items
 INSERT INTO cart_items (userID, bookID, quantity) VALUES
