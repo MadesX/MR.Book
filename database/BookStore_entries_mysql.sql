@@ -43,8 +43,8 @@ INSERT INTO reviews (review, bookID, userID, rating) VALUES
 ('Loved it!', 2, 2, 4),
 ('Very magical.', 2, 3, 5);
 
--- Wish List
-INSERT INTO wish_list (userID, bookID) VALUES
+-- Favorites
+INSERT INTO favorites (userID, bookID) VALUES
 (1, 2),
 (2, 1),
 (3, 1);
