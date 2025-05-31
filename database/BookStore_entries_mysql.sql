@@ -23,14 +23,13 @@ INSERT INTO book (title, auther, price, intro, picture, `language`, stock, purch
 ('הארי פוטר', 'ג׳יי קיי רולינג', 70, 'הרפתקאות קוסם צעיר.', 'https://m.media-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_FMjpg_UX1000_.jpg', 'H', 4, 10, 1),
 ('1984', 'George Orwell', 55, 'A dystopian novel about totalitarianism.', 'https://m.media-amazon.com/images/I/61NAx5pd6XL._AC_UF1000,1000_QL80_.jpg', 'E', 8, 120, 1),
 ('The Hobbit', 'J.R.R. Tolkien', 65, 'A fantasy adventure before The Lord of the Rings.', 'https://m.media-amazon.com/images/I/71jD4jMityL._AC_UF1000,1000_QL80_.jpg', 'E', 7, 90, 1),
-('To Kill a Mockingbird', 'Harper Lee', 50, 'A story of racial injustice and childhood.', 'mockingbird.jpg', 'E', 6, 75, 0),
-('Pride and Prejudice', 'Jane Austen', 45, 'A romantic classic set in 19th-century England.', 'pride.jpg', 'E', 9, 60, 0),
+('To Kill a Mockingbird', 'Harper Lee', 50, 'A story of racial injustice and childhood.', 'https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1612238791i/56916837.jpg', 'E', 6, 75, 0),
+('Pride and Prejudice', 'Jane Austen', 45, 'A romantic classic set in 19th-century England.', 'https://m.media-amazon.com/images/I/712P0p5cXIL._AC_UF1000,1000_QL80_.jpg', 'E', 9, 60, 0),
 ('הנסיך הקטן', 'אנטואן דה סנט-אכזופרי', 40, 'סיפור פילוסופי ונוגע ללב.', 'https://www.am-oved.co.il/Media/Uploads/%D7%A2%D7%98%D7%99%D7%A4%D7%94_%D7%94%D7%A0%D7%A1%D7%99%D7%9A_%D7%97%D7%92%D7%99%D7%92%D7%99(2)_jpg.webp', 'H', 6, 35, 1),
-('מלחמה ושלום', 'לב טולסטוי', 85, 'אפוס היסטורי רוסי על מלחמה, אהבה וגורל.', 'warpeace_heb.jpg', 'H', 3, 20, 1),
+('מלחמה ושלום', 'לב טולסטוי', 85, 'אפוס היסטורי רוסי על מלחמה, אהבה וגורל.', 'https://www.kibutz-poalim.co.il/Media/Uploads/sqr-316122_B(2).jpg', 'H', 3, 20, 1),
 ('Sapiens', 'Yuval Noah Harari', 70, 'A brief history of humankind.', 'https://m.media-amazon.com/images/I/61ZKK6Y1nFL._AC_UF1000,1000_QL80_.jpg', 'E', 10, 150, 1),
-('צופן דה וינצ׳י', 'דן בראון', 60, 'מותחן מסתורין היסטורי מודרני.', 'da_vinci_heb.jpg', 'H', 5, 55, 0),
+('צופן דה וינצ׳י', 'דן בראון', 60, 'מותחן מסתורין היסטורי מודרני.', 'https://www.e-vrit.co.il/Images/Products/covers_2017/_master(21).jpg', 'H', 5, 55, 0),
 ('Game of Thrones', 'George R.R. Martin', 75, 'A fantasy saga of power and betrayal.', 'https://m.media-amazon.com/images/I/71Jzezm8CBL.jpg', 'E', 4, 110, 1);
-
 
 -- Book Categories
 INSERT INTO book_categories (bookID, category) VALUES
