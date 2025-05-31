@@ -45,6 +45,10 @@ INSERT INTO reviews (review, bookID, userID, rating) VALUES
 
 -- Favorites
 INSERT INTO favorites (userID, bookID) VALUES
+(1, 5),
+(1, 8),
+(1, 1),
+(1, 4),
 (1, 2),
 (2, 1),
 (3, 1);
