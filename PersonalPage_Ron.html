@@ -1,43 +1,79 @@
-﻿<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ron’s Personal Page</title>
-    <link href="PersonalPage.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>רון - דף אישי</title>
+  <link rel="icon" href="../PHOTOS/ron_profile_pic.jpg" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1c1c1c;
+      color: #f5f5f5;
+      text-align: center;
+    }
+
+    .profile-container {
+      max-width: 500px;
+      margin: 50px auto;
+      background-color: #2c2c2c;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255,255,255,0.1);
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #555;
+    }
+
+    h1 {
+      margin-top: 20px;
+      font-size: 28px;
+      color: #ffcc80;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .contact {
+      margin-top: 15px;
+      font-size: 15px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      background-color: #ffcc80;
+      color: #1c1c1c;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #ffa726;
+    }
+  </style>
 </head>
 <body>
-    <!-- Header with profile pic and name -->
-    <header>
-        <img src="images/ron_profile_pic.jpg" alt="Ron’s Profile Picture" class="profile-pic-header" />
-        <h1>Ron’s Personal Page</h1>
-    </header>
 
-    <main>
-        <!-- Description about me -->
-        <div class="description">
-            <p>Hey, my name is Ron. I'm studying engineering and passionate about technology and sports.</p>
-        </div>
+  <div class="profile-container">
+    <img src="../PHOTOS/ron_profile_pic.jpg" alt="תמונת פרופיל של רון" />
+    <h1>רון חבה - דף אישי</h1>
+    <p>סטודנט להנדסת מחשבים שנה ג' במרכז האקדמי רופין. מתעניין בתוכנה, טכנולוגיה, ספורט ומוזיקה. שואף להשתלב בתחום הפיתוח.</p>
+    <div class="contact">
+      <p>ronhaba10010@gmail.com</p>
+      <p>052-5642529</p>
+    </div>
+    <a class="btn" href="TeamPage.html">חזרה לעמוד הצוות</a>
+  </div>
 
-        <!-- Contact  -->
-        <div class="contact">
-            <h2>Contact Me</h2>
-            <p>Email: ron@example.com</p>
-            <p>Phone: 053111111</p>
-        </div>
-
-        <!-- Button for Show Date & Time -->
-        <div style="text-align:center; margin-top: 20px;">
-            <button onclick="showDateTime()">Show Date & Time</button>
-        </div>
-    </main>
-
-    <script>
-        // Function to show the current date and time
-        function showDateTime() {
-            const date = new Date();
-            alert("Current Date & Time: " + date.toLocaleString());
-        }
-    </script>
 </body>
 </html>
