@@ -8,7 +8,6 @@ $username = "b16_38703978";
 $password = "t8gwx71y";
 $dbname = "b16_38703978_BookStore";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 $conn->set_charset("utf8");
 if ($conn->connect_error) {
@@ -31,6 +30,11 @@ $sql="INSERT INTO user (fname, lname, dateOfBirth, userName, password, gender, e
 	",".$favnumber.",".$favcolor.",".$time.",".$pic.",".$about.",".$rating.");";
 
 $conn->query($sql);
+$userID = $conn->insert_id;
+
+$sql2 = "INSERT INTO shopping_cart (userID) VALUES ('".$userID."');";
+$conn->query($sql2);
+
 $conn->close();
 
 header("Location: Login1.html");
