@@ -27,7 +27,7 @@
 
 	$sql_bestSellers = "SELECT bookID, title, auther, intro, picture FROM book ORDER BY purchaseNum DESC LIMIT 4";
 	$bestSellers = $conn->query($sql_bestSellers);
-	$sql_recommended = "SELECT bookID, title, auther, intro, picture FROM book WHERE recommend=1 LIMIT 4";
+	$sql_recommended = "SELECT bookID, title, auther, intro, picture FROM book WHERE recommend=1 ORDER BY RAND() LIMIT 4";
 	$recommended = $conn->query($sql_recommended);
 
 	echo "<main>";
