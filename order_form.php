@@ -18,8 +18,8 @@
 			?>
 
             <label>תאריך <input type="date" name="orderDate" value="<?= date('Y-m-d') ?>" readonly></label>
-			<label>עיר <input type="text" name="city" pattern="[a-zA-Z]+" required></label>
-			<label>רחוב <input type="text" name="street" pattern="[a-zA-Z]+" required></label>
+			<label>עיר <input type="text" name="city" pattern="[a-zA-Z ]+" required></label>
+			<label>רחוב <input type="text" name="street" pattern="[a-zA-Z ]+" required></label>
 			<label>מספר בית <input type="text" name="houseNumber" pattern="[0-9]+" maxlength="3" required></label>
 			<label>מיקוד <input type="text" name="zipCode" pattern="[0-9]+" maxlength="8" required></label>
 			
