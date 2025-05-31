@@ -13,12 +13,11 @@
 			<?php
 				session_start();
 				$username = $_SESSION['user_name'];
+                $amount = $_SESSION['order_amount'];
 				echo "<label>שם משתמש <input type='text' name='username' value='$username' readonly></label>";
 			?>
 
-            <?php $date = date('d/m/Y'); ?>
-            <label>תאריך <input type="text" name="orderDate" value="<?= $date ?>" readonly></label>
-
+            <label>תאריך <input type="date" name="orderDate" value="<?= date('Y-m-d') ?>" readonly></label>
 			<label>עיר <input type="text" name="city" pattern="[a-zA-Z]+" required></label>
 			<label>רחוב <input type="text" name="street" pattern="[a-zA-Z]+" required></label>
 			<label>מספר בית <input type="text" name="houseNumber" pattern="[0-9]+" maxlength="3" required></label>
@@ -33,6 +32,7 @@
 			<?php
 				echo "<p id='amountDisplay'></p>";
 			?>
+            <input type="hidden" name="amount" id="amountInput" value="<?= $amount ?>">
 
 			<button type="submit">בצע הזמנה</button>
 			<input type="reset" value="איפוס">
@@ -42,6 +42,7 @@
     <script>
         const shippingSelect = document.querySelector('select');
         const amountDisplay = document.getElementById('amountDisplay');
+        const amountInput = document.getElementById('amountInput');
         const amount = <?php echo json_encode(isset($_SESSION['order_amount']) ? (int)$_SESSION['order_amount'] : 0); ?>;
         const shippingCost = 30;
 
@@ -49,6 +50,7 @@
             const shipping = parseInt(shippingSelect.value);
             const total = amount + (shipping ? shippingCost : 0);
             amountDisplay.textContent = "סכום הזמנה: ₪" + total;
+            amountInput.value = total;
         }
 
         shippingSelect.addEventListener('change', updateAmount);
