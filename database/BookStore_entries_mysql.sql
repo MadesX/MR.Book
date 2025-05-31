@@ -16,12 +16,6 @@ INSERT INTO `user` (fname, lname, dateOfBirth, userName, password, gender, email
 ('Bob', 'Jones', '1985-11-23', 'bobby85', 'Bob@Secure2', 'M', 'bob@example.com', '0522345678'),
 ('Charlie', 'Lee', '1995-08-30', 'charlie95', 'Ch@rlie3X', 'M', 'charlie@example.com', '0509876543');
 
--- Addresses
-INSERT INTO address (userID, city, street, houseNumber, zipCode) VALUES
-(1, 'TelAviv', 'Herzl', '10', '1234567'),
-(2, 'Jerusalem', 'Jaffa', '12', '7654321'),
-(3, 'Haifa', 'Carmel', '5', '2345678');
-
 -- Books
 INSERT INTO book (title, auther, price, intro, picture, `language`, stock, purchaseNum, recommend) VALUES
 ('Dune', 'Frank Herbert', 80, 'A sci-fi classic about a desert planet.', 'https://m.media-amazon.com/images/M/MV5BNWIyNmU5MGYtZDZmNi00ZjAwLWJlYjgtZTc0ZGIxMDE4ZGYwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg', 'E', 10, 50, 1),
@@ -67,9 +61,9 @@ INSERT INTO cart_items (userID, bookID, quantity) VALUES
 (3, 3, 1);
 
 -- Orders
-INSERT INTO orders (userID, orderDate, price) VALUES
-(1, '2024-05-01', 60),
-(2, '2024-05-02', 160);
+--INSERT INTO orders (userID, orderDate, price) VALUES
+--(1, '2024-05-01', 60),
+--(2, '2024-05-02', 160);
 
 -- Order Items
 INSERT INTO order_items (orderID, bookID, quantity, pricePerUnit) VALUES
