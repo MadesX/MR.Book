@@ -59,15 +59,6 @@ CREATE TABLE `admin` (
     password VARCHAR(50)
 );
 
-CREATE TABLE address (
-    userID INT PRIMARY KEY,
-    city NVARCHAR(100) NOT NULL CHECK (city REGEXP '^[a-zA-Z]+$'),
-    street NVARCHAR(100) NOT NULL CHECK (street REGEXP '^[a-zA-Z]+$'),
-    houseNumber NVARCHAR(3) NOT NULL CHECK (houseNumber REGEXP '^[0-9]+$'),
-    zipCode NVARCHAR(8) NOT NULL CHECK (zipCode REGEXP '^[0-9]+$'),
-    FOREIGN KEY (userID) REFERENCES `user`(userID) ON DELETE CASCADE
-);
-
 CREATE TABLE reviews (
     reviewID SMALLINT AUTO_INCREMENT,
     review VARCHAR(255),
@@ -105,7 +96,12 @@ CREATE TABLE orders (
     orderID INT AUTO_INCREMENT PRIMARY KEY,
     userID INT,
     orderDate DATE DEFAULT CURRENT_DATE,
-    price INT CHECK(price > 0),
+    amount INT CHECK(amount > 0),
+    city NVARCHAR(50) NOT NULL CHECK (city REGEXP '^[a-zA-Z]+$'),
+    street NVARCHAR(50) NOT NULL CHECK (street REGEXP '^[a-zA-Z]+$'),
+    houseNumber NVARCHAR(3) NOT NULL CHECK (houseNumber REGEXP '^[0-9]+$'),
+    zipCode NVARCHAR(8) NOT NULL CHECK (zipCode REGEXP '^[0-9]+$'),
+    shipping bit DEFAULT 0,
     FOREIGN KEY (userID) REFERENCES `user`(userID)
 );
 
