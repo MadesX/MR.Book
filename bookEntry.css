@@ -71,3 +71,11 @@ input[type="reset"], .form-container form button {
 	font-size: 1rem;
 	cursor: pointer;
 }
+
+#amountDisplay {
+	text-align: center;
+	font-size: 1.2rem;
+	font-weight: bold;
+	margin-top: 30px;
+	margin-bottom: 10px;
+}
