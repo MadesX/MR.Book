@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="form-container">
-		<form action="submit_order.php" method="POST">
+		<form action="order_submit.php" method="POST">
 	        <h1>הזמנה</h1>
             
 			<?php
