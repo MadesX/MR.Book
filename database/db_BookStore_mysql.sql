@@ -97,11 +97,11 @@ CREATE TABLE orders (
     userID INT,
     orderDate DATE DEFAULT CURRENT_DATE,
     amount INT CHECK(amount > 0),
-    city NVARCHAR(50) NOT NULL CHECK (city REGEXP '^[a-zA-Z]+$'),
+	city NVARCHAR(50) NOT NULL CHECK (city REGEXP '^[a-zA-Z]+$'),
     street NVARCHAR(50) NOT NULL CHECK (street REGEXP '^[a-zA-Z]+$'),
     houseNumber NVARCHAR(3) NOT NULL CHECK (houseNumber REGEXP '^[0-9]+$'),
     zipCode NVARCHAR(8) NOT NULL CHECK (zipCode REGEXP '^[0-9]+$'),
-    shipping bit DEFAULT 0,
+	shipping bit DEFAULT 0,
     FOREIGN KEY (userID) REFERENCES `user`(userID)
 );
 
