@@ -70,7 +70,7 @@ CREATE TABLE reviews (
     FOREIGN KEY (userID) REFERENCES `user`(userID)
 );
 
-CREATE TABLE wish_list (
+CREATE TABLE favorites (
     userID INT,
     bookID INT,
     PRIMARY KEY (userID, bookID),
