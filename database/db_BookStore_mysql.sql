@@ -9,7 +9,7 @@ CREATE TABLE book (
     auther NVARCHAR(100) NOT NULL,
     price SMALLINT NOT NULL CHECK(price > 0),
     rating SMALLINT DEFAULT 0,
-    intro NVARCHAR(500),
+    intro NVARCHAR(5000),
     picture VARCHAR(255),
     language CHAR(1) CHECK(language IN ('H', 'E')),
     stock SMALLINT DEFAULT 0 CHECK(stock >= 0),
