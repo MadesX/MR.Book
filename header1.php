@@ -16,7 +16,7 @@ fetch('header1.html')    // Load the header dynamically
                 .then(response2 => response2.text())
                 .then(data2 => {
                     document.getElementById('header-placeholder').innerHTML += data2;
-            });
+                });
         }
 
         if (session_name != null) {

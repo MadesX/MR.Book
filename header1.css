@@ -1,3 +1,4 @@
+/* Header */
 header {
     position: relative;
     height: 90px;
@@ -48,31 +49,33 @@ header > div:nth-child(3) > p {
     align-items: center;
 }
 
-    .search-form > input[type="text"] {
-        padding: 6px 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px 5px 5px 5px;
-        outline: none;
-    }
+.search-form > input[type="text"] {
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
 
-    .search-form > button {
-        border: 1px solid #ccc;
-        border-left: none;
-        border-radius: 5px 5px 5px 5px;
-        cursor: pointer;
-        height: 30px;
-        width: 30px;
-    }
-        .search-form > button > img {
-            display: block;
-            width: 90%;
-            height: auto;
-        }
+.search-form > button {
+    border: 1px solid #ccc;
+    border-left: none;
+    border-radius: 5px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+}
 
-        .search-form > button:hover {
-            background-color: lightgray;
-        }
+.search-form > button > img {
+    display: block;
+    width: 90%;
+    height: auto;
+}
 
+.search-form > button:hover {
+    background-color: lightgray;
+}
+
+/* Navigation */
 nav ul {
     list-style: none;
     margin: 0;
@@ -96,14 +99,28 @@ nav a {
     text-decoration: none;
 }
 
-    nav a:hover {
-        background-color: #303f9f;
-    }
+nav a:hover {
+    background-color: #303f9f;
+}
 
 #nav-admin {
     margin-top: -20px;
 }
 
+/* Footer */
+footer {
+	background: rgba(255, 255, 255, 0.8);
+	color: #333;
+	font-size: 12px;
+	width: 100%;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    margin-top: 20px;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .header-right a img {
         width: 24px;
@@ -114,3 +131,14 @@ nav a {
         width: 100px;
     }
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
