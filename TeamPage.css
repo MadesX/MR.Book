@@ -67,3 +67,19 @@ h1.title {
 .member a:hover {
   text-decoration: underline;
 }
+
+
+
+@media (max-width: 1190px) {
+	.team-member {
+		width: 45%;
+		margin: 2% auto;
+	}
+}
+
+@media (max-width: 600px) {
+	.team-member {
+		width: 100%;
+		margin: 5% auto;
+	}
+}
