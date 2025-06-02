@@ -98,3 +98,27 @@ body {
     color: white;
     cursor: not-allowed;
 }
+
+@media (max-width: 1190px) {
+	.book-details {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.book-details img {
+		width: 60%;
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 600px) {
+	.book-details img {
+		width: 100%;
+	}
+
+	.book-details-description {
+		padding: 10px;
+		text-align: center;
+	}
+}
+
