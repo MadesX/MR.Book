@@ -4,33 +4,34 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>צור קשר</title>
-  <link rel="icon" href="images/logo.png" />
-  <link rel="stylesheet" href="contact.css" />
+  <link href="header1.css" rel="stylesheet" />
+  <link href="footer.css" rel="stylesheet" />
+  <link href="contact.css" rel="stylesheet" />
 </head>
 <body>
 
-  <header>
-    <h1>טופס יצירת קשר</h1>
-  </header>
+  <div id="header-placeholder"></div>
 
-  <form id="contactForm">
-    <input type="email" id="to" placeholder="כתובת מייל של הנמען" required />
-    <input type="text" id="subject" placeholder="נושא ההודעה" required />
-    <textarea id="message" rows="5" placeholder="כתוב כאן את הודעתך..." required></textarea>
-    <input type="submit" value="שלח הודעה" />
-  </form>
+  <main>
+    <h1 class="section-title">טופס יצירת קשר</h1>
 
-  <script>
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();  
-      const to = document.getElementById('to').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
+    <div class="form-group">
+      <input type="text" id="subject" placeholder="נושא ההודעה" required />
+    </div>
 
-      const mailtoLink = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
-      window.location.href = mailtoLink;
-    });
-  </script>
+    <div class="form-group">
+      <textarea id="body" rows="5" placeholder="כתוב כאן את הודעתך..." required></textarea>
+    </div>
 
+    <div class="form-group">
+      <button onclick="sendEmail()">שלח הודעה</button>
+    </div>
+  </main>
+
+  <footer></footer>
+
+  <script src="contact.js"></script>
+  <script src="header1.php"></script>
+  <script src="footer.js"></script>
 </body>
 </html>
