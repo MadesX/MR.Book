@@ -57,8 +57,9 @@ body {
 }
 
 
+
 @media (max-width: 1190px) {
-	.cart-container {
+	.cart-main {
 		width: 80%;
 		margin: auto;
 	}
@@ -71,9 +72,10 @@ body {
 }
 
 @media (max-width: 600px) {
-	.cart-container {
+	.cart-main {
 		width: 100%;
 		padding: 10px;
+		box-sizing: border-box;
 	}
 
 	.cart-item img {
@@ -81,5 +83,4 @@ body {
 		margin-bottom: 10px;
 	}
 }
-
 
