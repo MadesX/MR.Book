@@ -32,28 +32,25 @@
 }
 
 
+
 @media (max-width: 1190px) {
-	.checkout-container {
+	.checkout-form {
 		width: 80%;
 		margin: auto;
-	}
-
-	.checkout-form {
-		flex-direction: column;
 	}
 }
 
 @media (max-width: 600px) {
-	.checkout-container {
+	.checkout-form {
 		width: 100%;
 		padding: 10px;
 		box-sizing: border-box;
 	}
 
-	.checkout-form input,
-	.checkout-form select {
+	.checkout-form input {
 		width: 100%;
 		margin-bottom: 10px;
 	}
 }
+
 
