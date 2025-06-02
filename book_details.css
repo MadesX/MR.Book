@@ -99,26 +99,37 @@ body {
     cursor: not-allowed;
 }
 
+
 @media (max-width: 1190px) {
-	.book-details {
+	.book-container {
 		flex-direction: column;
 		align-items: center;
 	}
 
-	.book-details img {
+	.book-container img {
 		width: 60%;
 		margin-bottom: 20px;
 	}
 }
 
 @media (max-width: 600px) {
-	.book-details img {
+	.book-container img {
 		width: 100%;
 	}
 
-	.book-details-description {
+	.book-info {
 		padding: 10px;
 		text-align: center;
+	}
+
+	.book-actions {
+		flex-direction: column;
+	}
+
+	.book-actions .add-btn,
+	.book-actions .fav-btn {
+		font-size: 0.95rem;
+		padding: 10px;
 	}
 }
 
