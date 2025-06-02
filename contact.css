@@ -63,3 +63,26 @@ input[type="submit"]:hover {
   color: tomato;
   margin-top: 20px;
 }
+
+
+@media (max-width: 1190px) {
+	.contact-form {
+		width: 80%;
+		margin: auto;
+	}
+}
+
+@media (max-width: 600px) {
+	.contact-form {
+		width: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+
+	.contact-form input,
+	.contact-form textarea {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+}
+
