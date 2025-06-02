@@ -2,9 +2,9 @@
 INSERT INTO categories (category) VALUES
 ('SF'), ('F'), ('R'), ('B'), ('Hi'), ('Hr'), ('M'), ('T'), ('A'), ('K'), ('C');
 
--- Users
 INSERT INTO `admin` (userID, userName, password) VALUES (0, 'admin', 'admin');
 
+-- Users
 INSERT INTO `user` (fname, lname, dateOfBirth, userName, password, gender, email, phone, country, website, favoriteNumber, favoriteColor, contactTime, profilePicture, about, rating) VALUES
 ('Alice', 'Smith', '1990-04-15', 'asmith', 'Alice@2023!', 'F', 'alice26@example.com', '0123456699', 'USA', 'https://aliceblog.com', 7, '#FF5733', '09:30:00', 'alice_profile.jpg', 'Love to travel and write.', 8),
 ('Bob', 'Johnson', '1985-11-02', 'bobbyJ', 'B0b@Secure!', 'M', 'bob.j@example.org', '0987654321', 'Canada', 'https://bobjohnson.dev', 12, '#33FF99', '14:45:00', '/images/bob_pic.png', 'Software engineer and guitarist.', 10),
@@ -37,12 +37,6 @@ INSERT INTO book_categories (bookID, category) VALUES
 (2, 'F'),
 (3, 'K');
 
--- Reviews
-INSERT INTO reviews (review, bookID, userID, rating) VALUES
-('Amazing book!', 1, 1, 5),
-('Loved it!', 2, 2, 4),
-('Very magical.', 2, 3, 5);
-
 -- Favorites
 INSERT INTO favorites (userID, bookID) VALUES
 (1, 5),
@@ -62,13 +56,3 @@ INSERT INTO cart_items (userID, bookID, quantity) VALUES
 (1, 2, 1),
 (2, 1, 2),
 (3, 3, 1);
-
--- Orders
---INSERT INTO orders (userID, orderDate, price) VALUES
---(1, '2024-05-01', 60),
---(2, '2024-05-02', 160);
-
--- Order Items
-INSERT INTO order_items (orderID, bookID, quantity, pricePerUnit) VALUES
-(1, 2, 1, 60),
-(2, 1, 2, 80);
