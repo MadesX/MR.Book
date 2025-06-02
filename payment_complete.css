@@ -34,7 +34,7 @@
 
 
 @media (max-width: 1190px) {
-	.payment-message {
+	.confirmation {
 		width: 80%;
 		margin: auto;
 		text-align: center;
@@ -42,11 +42,12 @@
 }
 
 @media (max-width: 600px) {
-	.payment-message {
+	.confirmation {
 		width: 100%;
-		padding: 10px;
-		font-size: 1.1em;
-		text-align: center;
+		padding: 15px;
+		box-sizing: border-box;
+		font-size: 1rem;
 	}
 }
+
 
