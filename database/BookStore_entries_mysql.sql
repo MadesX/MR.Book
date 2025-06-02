@@ -17,7 +17,7 @@ INSERT INTO `user` (fname, lname, dateOfBirth, userName, password, gender, email
 ('Charlie', 'Lee', '1995-08-30', 'charlie95', 'Ch@rlie3X', 'M', 'charlie@example.com', '0509876543');
 
 -- Books
-INSERT INTO book (title, auther, price, intro, picture, `language`, stock, purchaseNum, recommend) VALUES
+INSERT INTO book (title, auther, price, intro, picture, `language`, stock, purchaseNum, recommend) VALUES   -- recommend 0 or 1 only
 ('Dune', 'Frank Herbert', 80, 'A sci-fi classic about a desert planet.', 'https://m.media-amazon.com/images/M/MV5BNWIyNmU5MGYtZDZmNi00ZjAwLWJlYjgtZTc0ZGIxMDE4ZGYwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg', 'E', 10, 50, 1),
 ('Harry Potter', 'J.K. Rowling', 60, 'A young wizard''s adventures.', 'https://m.media-amazon.com/images/M/MV5BNGJhM2M2MWYtZjIzMC00MDZmLThkY2EtOWViMDhhYjRhMzk4XkEyXkFqcGc@._V1_.jpg', 'E', 5, 200, 0),
 ('הארי פוטר', 'ג׳יי קיי רולינג', 70, 'הרפתקאות קוסם צעיר.', 'https://m.media-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_FMjpg_UX1000_.jpg', 'H', 4, 10, 1),
