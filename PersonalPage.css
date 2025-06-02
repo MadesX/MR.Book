@@ -52,3 +52,17 @@ p {
 .btn:hover {
   background-color: #ffa726;
 }
+
+
+@media (max-width: 1190px) {
+	.book {
+		width: 45%;
+	}
+}
+
+@media (max-width: 600px) {
+	.book {
+		width: 100%;
+	}
+}
+
