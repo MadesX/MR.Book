@@ -1,9 +1,14 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 body {
 	font-family: Arial, sans-serif;
 	padding: 0;
 	background: url('images/bookstore-background.jpg') no-repeat center center fixed;
 	background-size: cover;
-	margin: 20px;
 }
 
 h1 {
@@ -36,14 +41,14 @@ label.required::after {
 	position: absolute;
 }
 
-input, select, textarea {
+.form-container form input, select, textarea {
 	width: 100%;
 	padding: 8px;
 	margin-top: 5px;
 	box-sizing: border-box;
 }
 
-input[type="reset"], form button {
+input[type="reset"], .form-container form button {
 	background-color: #4caf50;
 	color: white;
 	border: none;
@@ -62,7 +67,7 @@ input[type="reset"], form button {
 	margin-right: 20px;
 }
 
-input[type="button"] {
+.form-container input[type="button"] {
 	width: 20%;
 	margin-right: 10px;
 	font-size: 0.85rem;
