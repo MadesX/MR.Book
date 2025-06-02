@@ -45,7 +45,22 @@ INSERT INTO book (title, auther, price, intro, picture, `language`, stock, purch
 INSERT INTO book_categories (bookID, category) VALUES
 (1, 'SF'),
 (2, 'F'),
-(3, 'K');
+(3, 'K'),
+(4, 'D'),
+(5, 'F'),
+(6, 'Hi'),
+(7, 'R'),
+(8, 'K'),
+(10, 'C'),
+(11, 'T'),
+(13, 'D'),
+(14, 'R'),
+(15, 'B'),
+(16, 'D'),
+(17, 'SF'),
+(18, 'P'),
+(21, 'SF');
+
 
 -- Favorites
 INSERT INTO favorites (userID, bookID) VALUES
