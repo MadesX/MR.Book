@@ -54,15 +54,33 @@ p {
 }
 
 
+
 @media (max-width: 1190px) {
-	.book {
-		width: 45%;
+	.profile-container {
+		width: 80%;
+		margin: auto;
 	}
 }
 
 @media (max-width: 600px) {
-	.book {
-		width: 100%;
+	.profile-container {
+		width: 95%;
+		padding: 20px 10px;
+		box-sizing: border-box;
+	}
+
+	img {
+		width: 100px;
+		height: 100px;
+	}
+
+	h1 {
+		font-size: 24px;
+	}
+
+	p, .contact {
+		font-size: 14px;
 	}
 }
+
 
