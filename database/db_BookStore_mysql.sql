@@ -8,7 +8,6 @@ CREATE TABLE book (
     title NVARCHAR(100) NOT NULL,
     auther NVARCHAR(100) NOT NULL,
     price SMALLINT NOT NULL CHECK(price > 0),
-    rating SMALLINT DEFAULT 0,
     intro NVARCHAR(5000),
     picture VARCHAR(255),
     language CHAR(1) CHECK(language IN ('H', 'E')),
@@ -57,17 +56,6 @@ CREATE TABLE `admin` (
     userID INT PRIMARY KEY,
     userName NVARCHAR(50),
     password VARCHAR(50)
-);
-
-CREATE TABLE reviews (
-    reviewID SMALLINT AUTO_INCREMENT,
-    review VARCHAR(255),
-    bookID INT,
-    userID INT,
-    rating INT CHECK (rating BETWEEN 1 AND 5),
-    PRIMARY KEY (reviewID, bookID),
-    FOREIGN KEY (bookID) REFERENCES book(bookID) ON DELETE CASCADE,
-    FOREIGN KEY (userID) REFERENCES `user`(userID)
 );
 
 CREATE TABLE favorites (
