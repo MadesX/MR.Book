@@ -56,16 +56,18 @@ button {
 		background-color: #388e3c;
 	}
 
+
 @media (max-width: 1190px) {
-	.container, .form-box, .login-box {
+	.login-container {
 		width: 80%;
 	}
 }
 
 @media (max-width: 600px) {
-	.container, .form-box, .login-box {
+	.login-container {
 		width: 100%;
-		padding: 10px;
+		padding: 20px;
+		box-sizing: border-box;
 	}
 }
 
