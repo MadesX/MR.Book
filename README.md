@@ -61,13 +61,6 @@ All files are hosted and executed via **ByetHost**, a free PHP/MySQL hosting pro
 **2. Database Connection**         
  --matan************************************************************888888
 
-```php - matannnnnnnnnnnnnnnnnnnnnnnnnnnn - לשנות בהתאם למשתמש לא בטוח איך לסגנן *************************888888888888888888888888888888
-$servername = "your_host";
-$username = "your_user";
-$password = "your_pass";
-$dbname = "your_db_name";
-
-
 **3. Starting the System**
 
 - Upload all project files (HTML, PHP, CSS, JS) to the `htdocs` or `public_html` folder in your ByetHost file manager.
@@ -81,12 +74,7 @@ $dbname = "your_db_name";
 - You can also manage data directly via ByetHost's PHPMyAdmin panel.
 
 # System Requirements
-
-- Web browser (Chrome, Firefox, Edge)
-- PHP 7.4 or later
-- MySQL database (configured via ByetHost control panel)
-- Internet connection
-- Optional: Mail server (for contact form functionality)
+--matan************************************************************888888
 
 # Database Structure
 
@@ -121,3 +109,9 @@ If you wish to use the code in **any commercial or for-profit product**, you mus
 © 2025 Ron Haba and Matan Sides  
 All rights reserved.
 
+
+```php - matannnnnnnnnnnnnnnnnnnnnnnnnnnn - וגם איפה למקם את זה בקובץ לשנות בהתאם למשתמש לא בטוח איך לסגנן *************************888888888888888888888888888888
+$servername = "your_host";
+$username = "your_user";
+$password = "your_pass";
+$dbname = "your_db_name";
