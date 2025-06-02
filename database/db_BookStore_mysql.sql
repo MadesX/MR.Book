@@ -1,6 +1,7 @@
 CREATE TABLE categories (
     category VARCHAR(2) PRIMARY KEY,
     CHECK (category IN ('SF', 'F', 'R', 'B', 'Hi', 'Hr', 'M', 'T', 'A', 'K', 'C'))
+    -- SF: Science fiction , F: fantasy , R: romance, B: biography , Hi: history , Hr: Horror , M: mystery , T: thriller , A: adventure , K: kids , C: classic
 );
 
 CREATE TABLE book (
