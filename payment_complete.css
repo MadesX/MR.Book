@@ -31,3 +31,22 @@
 .confirmation a:hover {
     background-color: #b58f28;
 }
+
+
+@media (max-width: 1190px) {
+	.payment-message {
+		width: 80%;
+		margin: auto;
+		text-align: center;
+	}
+}
+
+@media (max-width: 600px) {
+	.payment-message {
+		width: 100%;
+		padding: 10px;
+		font-size: 1.1em;
+		text-align: center;
+	}
+}
+
