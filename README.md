@@ -110,7 +110,9 @@ If you wish to use the code in **any commercial or for-profit product**, you mus
 All rights reserved.
 
 
-```php - matannnnnnnnnnnnnnnnnnnnnnnnnnnn - וגם איפה למקם את זה בקובץ לשנות בהתאם למשתמש לא בטוח איך לסגנן *************************888888888888888888888888888888
+
+- matannnnnnnnnnnnnnnnnnnnnnnnnnnn - וגם איפה למקם את זה בקובץ לשנות בהתאם למשתמש לא בטוח איך לסגנן *************************888888888888888888888888888888
+```php 
 $servername = "your_host";
 $username = "your_user";
 $password = "your_pass";
