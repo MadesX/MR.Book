@@ -9,7 +9,7 @@ body {
 	background: url('images/bookstore-background.jpg') no-repeat center center fixed;
 	background-size: cover;
 	color: #333;
-    display: flex;
+    	display: flex;
 	flex-direction: column;
 }
 
@@ -39,16 +39,16 @@ h1 {
 	padding: 8px;
 	margin-top: 5px;
 	box-sizing: border-box;
-    margin-bottom: 15px;
+    	margin-bottom: 15px;
 }
 
 form fieldset {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px 20px;
-    padding: 8px;
+    	padding: 8px;
 	margin-top: 15px;
-    margin-bottom: 15px;
+    	margin-bottom: 15px;
 }
 
 form fieldset label {
@@ -70,6 +70,10 @@ input[type="reset"], .form-container form button {
 	padding: 10px 15px;
 	font-size: 1rem;
 	cursor: pointer;
+}
+
+input[type="reset"]:hover, .form-container form button:hover {
+	background-color: #388e3c;
 }
 
 #amountDisplay {
