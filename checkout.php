@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// התחברות למסד
 $servername = "sql206.byethost16.com";
 $username = "b16_38703978";
 $password = "t8gwx71y";
@@ -13,7 +12,6 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// קבלת ספרים מהעגלה
 $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 $books = [];
 $total = 0;
@@ -27,7 +25,6 @@ if (!empty($cart)) {
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -35,17 +32,18 @@ if (!empty($cart)) {
     <title>תשלום</title>
     <link rel="stylesheet" href="cart.css">
     <link rel="stylesheet" href="checkout.css">
-    <script src="checkout.js"></script>
+    <link rel="stylesheet" href="header1.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 <body>
 
-<header class="cart-header">
-    <h1> עמוד תשלום</h1>
-</header>
+<div id="header-placeholder"></div>
 
 <main class="cart-main">
+    <h1 class="cart-title"> עמוד תשלום</h1>
+
     <?php if (empty($books)): ?>
-        <p>אין ספרים בעגלה.</p>
+        <p style="text-align:center;">אין ספרים בעגלה.</p>
     <?php else: ?>
         <ul>
             <?php foreach ($books as $book): ?>
@@ -72,5 +70,10 @@ if (!empty($cart)) {
     <?php endif; ?>
 </main>
 
+<footer></footer>
+
+<script src="header1.php"></script>
+<script src="footer.js"></script>
+<script src="checkout.js"></script>
 </body>
 </html>
