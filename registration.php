@@ -22,12 +22,16 @@ $time = $_POST['time'] !== '' ? "'".$_POST['time']."'" : "NULL";
 $pic = $_POST['pic'] !== '' ? "'".$_POST['pic']."'" : "NULL";
 $about = $_POST['about'] !== '' ? "'".$_POST['about']."'" : "NULL";
 $rating = $_POST['rating'] !== '' ? (int)$_POST['rating'] : "NULL";
+date_default_timezone_set("Asia/Jerusalem");
+$datetime = $datetime = date("Y-m-d H:i:s");
 
 $sql="INSERT INTO user (fname, lname, dateOfBirth, userName, password, gender, email, phone, country, website, 
-	favoriteNumber, favoriteColor, contactTime, profilePicture, about, rating) VALUES (
+	favoriteNumber, favoriteColor, contactTime, profilePicture, about, rating, registrationDate) VALUES (
 	'".$_POST["fname"]."','".$_POST["lname"]."','".$_POST["dob"]."','".$_POST["username"]."','".$_POST["password"].
 	"','".$_POST["gender"]."','".$_POST["email"]."','".$_POST["phone"]."',".$country.",".$website.
-	",".$favnumber.",".$favcolor.",".$time.",".$pic.",".$about.",".$rating.");";
+	",".$favnumber.",".$favcolor.",".$time.",".$pic.",".$about.",".$rating.",'".$datetime."');";
+
+echo $sql;
 
 $conn->query($sql);
 $userID = $conn->insert_id;
