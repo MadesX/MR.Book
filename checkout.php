@@ -17,14 +17,19 @@ $books = [];
 $total = 0;
 
 if (!empty($cart)) {
-    $ids = implode(",", array_map('intval', $cart));
+    $ids = implode(",", array_map('intval', array_keys($cart)));
     $result = $conn->query("SELECT * FROM book WHERE bookID IN ($ids)");
     while ($row = $result->fetch_assoc()) {
+        $bookID = $row['bookID'];
+        $quantity = $cart[$bookID];
+        $row['quantity'] = $quantity;
+        $row['subtotal'] = $row['price'] * $quantity;
         $books[] = $row;
-        $total += $row['price'];
+        $total += $row['subtotal'];
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -40,14 +45,17 @@ if (!empty($cart)) {
 <div id="header-placeholder"></div>
 
 <main class="cart-main">
-    <h1 class="cart-title"> עמוד תשלום</h1>
+    <h1 class="cart-title">עמוד תשלום</h1>
 
     <?php if (empty($books)): ?>
         <p style="text-align:center;">אין ספרים בעגלה.</p>
     <?php else: ?>
         <ul>
             <?php foreach ($books as $book): ?>
-                <li><strong><?= htmlspecialchars($book['title']) ?></strong> - <?= htmlspecialchars($book['price']) ?> ₪</li>
+                <li>
+                    <strong><?= htmlspecialchars($book['title']) ?></strong>
+                    (x<?= $book['quantity'] ?>) - <?= $book['subtotal'] ?> ₪
+                </li>
             <?php endforeach; ?>
         </ul>
         <p><strong>סה״כ לתשלום: <?= $total ?> ₪</strong></p>
