@@ -100,9 +100,8 @@ $allBooks = $conn->query($sql);
                                 <a href='book_details.php?id=" . $row["bookID"] . "'>
                                     <button type='button'>פרטים נוספים</button>
                                 </a>
-                                <form method='POST' action='add_to_cart.php' style='display:inline;'>
-                                    <input type='hidden' name='bookID' value='" . $row["bookID"] . "' />
-                                    <button type='submit'>🛒</button>
+                                <form class='add-to-cart-form' data-book-id='" . $row["bookID"] . "'>
+                                    <button type='button'>🛒</button>
                                 </form>
                             </div>
                         </div>
@@ -117,5 +116,28 @@ $allBooks = $conn->query($sql);
 </main>
 
 <script src="header1.php"></script>
+
+<script>
+document.querySelectorAll(".add-to-cart-form").forEach(form => {
+    const bookID = form.getAttribute("data-book-id");
+
+    form.querySelector("button").addEventListener("click", function() {
+        fetch("add_to_cart.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: "bookID=" + encodeURIComponent(bookID)
+        })
+        .then(res => res.text())
+        .then(data => {
+            alert("הספר נוסף לעגלה!");
+        })
+        .catch(error => {
+            console.error("שגיאה:", error);
+        });
+    });
+});
+</script>
 </body>
 </html>
