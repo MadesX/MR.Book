@@ -60,6 +60,10 @@ input[type="reset"], .form-container form button {
 	cursor: pointer;
 }
 
+input[type="reset"]:hover, .form-container form button:hover {
+	background-color: #388e3c;
+}
+
 .note {
 	font-size: 0.85rem;
 	color: #666;
