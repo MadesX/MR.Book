@@ -7,6 +7,7 @@ $password = "t8gwx71y";
 $dbname = "b16_38703978_BookStore";
 $conn = new mysqli($servername, $username, $password, $dbname);
 $conn->set_charset("utf8");
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -16,11 +17,15 @@ $books = [];
 $total = 0;
 
 if (!empty($cart)) {
-    $ids = implode(",", array_map('intval', $cart));
+    $ids = implode(",", array_keys($cart));
     $result = $conn->query("SELECT * FROM book WHERE bookID IN ($ids)");
     while ($row = $result->fetch_assoc()) {
+        $bookID = $row['bookID'];
+        $quantity = $cart[$bookID];
+        $row['quantity'] = $quantity;
+        $row['total_price'] = $quantity * $row['price'];
         $books[] = $row;
-        $total += $row['price'];
+        $total += $row['total_price'];
     }
 }
 ?>
@@ -46,7 +51,27 @@ if (!empty($cart)) {
         <?php foreach ($books as $book): ?>
           <div class="cart-item">
             <strong><?= htmlspecialchars($book['title']) ?></strong><br />
-            מחיר: <?= htmlspecialchars($book['price']) ?> ₪
+            כמות: <?= $book['quantity'] ?><br />
+            מחיר ליחידה: <?= $book['price'] ?> ₪<br />
+            מחיר כולל: <?= $book['total_price'] ?> ₪
+
+            <form method="POST" action="update_cart.php" style="display:inline;">
+              <input type="hidden" name="bookID" value="<?= $book['bookID'] ?>">
+              <input type="hidden" name="action" value="increase">
+              <button type="submit">➕</button>
+            </form>
+
+            <form method="POST" action="update_cart.php" style="display:inline;">
+              <input type="hidden" name="bookID" value="<?= $book['bookID'] ?>">
+              <input type="hidden" name="action" value="decrease">
+              <button type="submit">➖</button>
+            </form>
+
+            <form method="POST" action="update_cart.php" style="display:inline;">
+              <input type="hidden" name="bookID" value="<?= $book['bookID'] ?>">
+              <input type="hidden" name="action" value="remove_all">
+              <button type="submit">🗑</button>
+            </form>
           </div>
         <?php endforeach; ?>
       </div>
@@ -64,6 +89,5 @@ if (!empty($cart)) {
 
   <script src="header1.php"></script>
   <script src="footer.js"></script>
-  <script src="cart.js"></script>
 </body>
 </html>
