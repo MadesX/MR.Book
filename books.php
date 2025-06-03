@@ -40,6 +40,7 @@ $allBooks = $conn->query($sql);
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
+    <link rel="stylesheet" href="books.css">
     <meta charset="UTF-8">
     <title>כל הספרים</title>
     <link rel="stylesheet" href="HomePage1.css">
@@ -72,7 +73,7 @@ $allBooks = $conn->query($sql);
                 </select>
             </div>
 
-            <div class="filter-group">
+            <div class="filter-group recommend-group">
                 <label>
                     <input type="checkbox" name="recommend" value="1" onchange="this.form.submit()" <?= $recommend === '1' ? 'checked' : '' ?>>
                     רק מומלצים
