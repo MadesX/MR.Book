@@ -40,6 +40,7 @@ CREATE TABLE `user` (
     favoriteNumber INT CHECK (favoriteNumber > 0),
     favoriteColor VARCHAR(7) CHECK (favoriteColor REGEXP '^#[0-9A-Fa-f]{6}$'),
     contactTime TIME,
+    registrationDate DATETIME DEFAULT CURRENT_TIMESTAMP,
     profilePicture NVARCHAR(255),
     about NVARCHAR(255),
 	rating SMALLINT CHECK (rating >= 0 AND rating <= 10),
