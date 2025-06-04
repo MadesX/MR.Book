@@ -23,7 +23,7 @@ $conn->close();
 
 echo "<script>
 		alert('הזמנתך הושלמה בהצלחה');
-		window.location.href = 'index1.php';
+		window.location.href = '../index1.php';
 	  </script>";
 exit();
 ?>
