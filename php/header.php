@@ -1,6 +1,6 @@
 <?php session_start(); ?>
 
-fetch('header1.html')    // Load the header dynamically
+fetch('../html/header.html')    // Load the header dynamically
     .then(response => response.text())
     .then(data => {
         document.getElementById('header-placeholder').innerHTML = data;
@@ -12,16 +12,16 @@ fetch('header1.html')    // Load the header dynamically
 
         const session_id = <?php echo json_encode($_SESSION['user_id'] ?? null); ?>;
         if (session_id != null && session_id == 0) {
-            fetch('navAdmin.html')
+            fetch('../html/navAdmin.html')
                 .then(response2 => response2.text())
                 .then(data2 => {
                     document.getElementById('header-placeholder').innerHTML += data2;
-                });
+            });
         }
 
         if (session_name != null) {
             const login = document.getElementById("login");
-            login.href = 'logout.php';
+            login.href = '../php/logout.php';
             login.title = 'התנתק';
         }
     });
