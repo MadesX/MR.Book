@@ -3,11 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>הזמנה</title>
-	<link rel="stylesheet" href="bookEntry.css">
+	<link href="../css/form.css" rel="stylesheet">
 </head>
 <body>
 	<div class="form-container">
-		<form action="order_submit.php" method="POST">
+		<form action="orderSubmit.php" method="POST">
 	        <h1>הזמנה</h1>
             
 			<?php
