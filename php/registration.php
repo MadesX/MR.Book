@@ -31,8 +31,6 @@ $sql="INSERT INTO user (fname, lname, dateOfBirth, userName, password, gender, e
 	"','".$_POST["gender"]."','".$_POST["email"]."','".$_POST["phone"]."',".$country.",".$website.
 	",".$favnumber.",".$favcolor.",".$time.",".$pic.",".$about.",".$rating.",'".$datetime."');";
 
-echo $sql;
-
 $conn->query($sql);
 $userID = $conn->insert_id;
 
@@ -41,7 +39,10 @@ $conn->query($sql2);
 
 $conn->close();
 
-header("Location: Login1.html");
+echo '<script>
+        alert("ההרשמה בוצעה בהצלחה, הינך מועבר להתחברות");
+        window.location.href = "../html/login.html";
+    </script>';
 exit();
 ?>
 
