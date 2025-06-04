@@ -46,6 +46,10 @@
     gap: 5px;
 }
 
+.book {
+	max-width: 305px;
+}
+
 .reset-button {
     background-color: #444;
     color: #fff;
@@ -60,4 +64,34 @@
 
 .reset-button:hover {
     background-color: #222;
+}
+
+.book-actions button {
+	background-color: #d4af37;
+	color: white;
+	border: none;
+	padding: 6px 10px;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: 0.85rem;
+}
+
+.book-actions button:hover {
+	background-color: #b58f28;
+}
+
+.reset-button {
+    background-color: #d4af37;
+    color: white;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-family: inherit;
+    transition: background-color 0.3s ease;
+}
+
+.reset-button:hover {
+    background-color: #b58f28;
 }
