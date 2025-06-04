@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['bookID'])) {
         $_SESSION['cart'][$bookID] = 1; // אם לא הוסף חדש
     }
 
-    header("Location: cart.php");
+    header("Location: ../php/cart.php");
     exit;
 }
 ?>
