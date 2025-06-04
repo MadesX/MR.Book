@@ -4,9 +4,9 @@
 	<meta charset="UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>הוספת ספר חדש</title>
-	<link href="header1.css" rel="stylesheet" />
-	<link href="footer.css" rel="stylesheet" />
-	<link href="bookEntry.css" rel="stylesheet" />
+	<link href="../css/header.css" rel="stylesheet" />
+	<link href="../css/footer.css" rel="stylesheet" />
+	<link href="../css/form.css" rel="stylesheet" />
 </head>
 <body>
 	<?php session_start(); ?>
@@ -16,7 +16,7 @@
 	<div class="form-container">
 		<h1>הוספת ספר למערכת</h1>
 
-		<form action="bookEntry.php" method="post">
+		<form action="../php/bookEntry.php" method="post">
 		  <label>כותרת הספר <input type="text" name="title" required></label>
 		  <label>שם המחבר <input type="text" name="auther" required></label>
 		  <label>מחיר (₪) <input type="number" name="price" required min="1" step="1"></label>
@@ -55,7 +55,7 @@
 	
 	<footer></footer>
 
-    <script src="footer.js"></script>
-    <script src="header1.php"></script>
+    <script src="../java_script/footer.js"></script>
+    <script src="../php/header.php"></script>
 </body>
 </html>
