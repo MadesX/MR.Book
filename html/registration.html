@@ -4,19 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>טופס הרשמה</title>
-    <link href="registration.css" rel="stylesheet" />
-    <link href="header1.css" rel="stylesheet" />
-    <link href="footer.css" rel="stylesheet" />
+    <link href="../css/registration.css" rel="stylesheet" />
+    <link href="../css/header.css" rel="stylesheet" />
+    <link href="../css/footer.css" rel="stylesheet" />
 </head>
 <body>
     <div id="header-placeholder"></div>
 
     <div class="form-container">
         <h1>טופס הרשמה</h1>
-        <p class="note">כבר רשום ? <input type="button" value="מעבר להתחברות" onclick="location.href='Login1.html'"></p>
+        <p class="note">כבר רשום ? <input type="button" value="מעבר להתחברות" onclick="location.href='login.html'"></p>
         <p class="note">* כל השדות המסומנים כחובה חייבים להתמלא.</p>
 
-        <form action="registration.php" autocomplete="on" method="post">
+        <form action="../php/registration.php" autocomplete="on" method="post">
         <label class="required">שם פרטי</label>
         <input type="text" name="fname" required>
 
@@ -77,8 +77,8 @@
 
     <footer></footer>
 
-    <script src="registration.js"></script>
-    <script src="footer.js"></script>
-    <script src="header1.php"></script>
+    <script src="../java_script/registration.js"></script>
+    <script src="../java_script/footer.js"></script>
+    <script src="../php/header.php"></script>
 </body>
 </html>
