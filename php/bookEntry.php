@@ -36,8 +36,8 @@ foreach ($categories as $cat) {
 $conn->close();
 
 echo "<script>
-		alert('The book - " . $title . " was successfully added to the system');
-		window.location.href = 'index1.php';
+		alert('הספר - " . $title . " הוכנס בהצלחה למערכת');
+		window.location.href = '../index1.php';
 	  </script>";
 exit();
 ?>
