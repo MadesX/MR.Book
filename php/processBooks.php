@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>מחירי ספרים</title>
-    <link href="processBooks.css" rel="stylesheet" />
-    <link href="header1.css" rel="stylesheet" />
-    <link href="footer.css" rel="stylesheet" />
+    <link href="../css/processBooks.css" rel="stylesheet" />
+    <link href="../css/header.css" rel="stylesheet" />
+    <link href="../css/footer.css" rel="stylesheet" />
 </head>
 <body>
     <div id="header-placeholder"></div>
@@ -60,7 +60,7 @@
 
     <footer></footer>
 
-    <script src="footer.js"></script>
-    <script src="header1.php"></script>
+    <script src="../java_script/footer.js"></script>
+    <script src="header.php"></script>
 </body>
 </html>
