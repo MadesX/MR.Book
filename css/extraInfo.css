@@ -80,29 +80,14 @@
     text-decoration: underline;
 }
 
-/* רספונסיביות */
-@media (max-width: 1190px) {
-	.extra-content {
-		width: 85%;
-		padding: 20px;
-		box-sizing: border-box;
-	}
+@media (max-width: 1200px) {
+    .book {
+        width: 48%;
+    }
 }
 
-@media (max-width: 600px) {
-	.extra-content {
-		width: 100%;
-		padding: 15px;
-		font-size: 0.95rem;
-		box-sizing: border-box;
-	}
-
-	.extra-content table {
-		font-size: 0.85rem;
-	}
-
-	.extra-content iframe {
-		width: 100%;
-		height: auto;
-	}
+@media (max-width: 800px) {
+    .book {
+        width: 100%;
+    }
 }
