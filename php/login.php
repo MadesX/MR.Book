@@ -1,7 +1,3 @@
-<html>
-<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
-<body>
-
 <?php
 $servername = "sql206.byethost16.com";
 $username = "b16_38703978";
@@ -31,18 +27,15 @@ if ($result->num_rows > 0) {
     $_SESSION['user_id'] = $row["userID"];
     $_SESSION['user_name'] = $row["fname"];
 
-    header("Location: index1.php");
+    header("Location: ../index1.php");
     exit();
 } else {
     echo "<script>
             alert('משתמש לא נמצא במערכת. אנא נסה שוב');
-            window.location.href = 'Login1.html';
+            window.location.href = '../html/login.html';
           </script>";
     exit();
 }
 
 $conn->close();
 ?>
-
-</body>
-</html>
