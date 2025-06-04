@@ -3,6 +3,6 @@ session_start();
 session_unset(); // Clear all session variables
 session_destroy(); // Destroy the session
 
-header("Location: index1.php");
+header("Location: ../index1.php");
 exit();
 ?>
