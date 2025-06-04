@@ -6,12 +6,11 @@ html, body {
 
 body {
 	font-family: Arial, sans-serif;
-	background: url('images/bookstore-background.jpg') no-repeat center center fixed;
+	background: url('../images/bookstore-background.jpg') no-repeat center center fixed;
 	background-size: cover;
 	color: #333;
-	display: flex;
+    display: flex;
 	flex-direction: column;
-	min-height: 100vh;
 }
 
 #header-placeholder, footer {
@@ -26,7 +25,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	box-sizing: border-box;
-	margin-top: -20px;
+    margin-top: -20px;
 }
 
 .section-title {
@@ -101,28 +100,23 @@ section {
 	margin: 5px 0;
 }
 
-.book-actions {
-	margin-top: 10px;
-	display: flex;
-	gap: 10px;
-	align-items: center;
-}
-
-.book-actions button {
-	background-color: #d4af37;
+.book-details button {
+	margin-top: auto;
+	align-self: flex-end;
+	background-color: #4caf50;
 	color: white;
 	border: none;
 	padding: 6px 10px;
 	border-radius: 5px;
+	width: 100px;
 	cursor: pointer;
 	font-size: 0.85rem;
 }
 
-.book-actions button:hover {
-	background-color: #b58f28;
+.book-details button:hover {
+	background-color: #388e3c;
 }
 
-/* רספונסיביות */
 @media (max-width: 1190px) {
 	.book {
 		width: 45%;
@@ -134,70 +128,3 @@ section {
 		width: 100%;
 	}
 }
-
-/* טופס סינון */
-.filter-form {
-	background-color: rgba(255, 255, 255, 0.85);
-	padding: 15px 20px;
-	border-radius: 10px;
-	margin: 20px auto;
-	display: flex;
-	justify-content: center;
-	gap: 30px;
-	flex-wrap: wrap;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-	width: fit-content;
-}
-
-.filter-group {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	font-size: 14px;
-	color: #2c3e50;
-}
-
-.filter-form select {
-	padding: 6px 10px;
-	border-radius: 6px;
-	border: 1px solid #ccc;
-	font-family: inherit;
-	font-size: 14px;
-	background-color: #f9f9f9;
-}
-
-.filter-form select:focus,
-.filter-form select:hover {
-	border-color: #b58f28;
-	background-color: #fff;
-	outline: none;
-}
-
-.filter-form input[type="checkbox"] {
-	transform: scale(1.2);
-	accent-color: #b58f28;
-}
-
-.reset-button {
-    background-color: #d4af37;
-    color: white;
-    padding: 6px 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    font-family: inherit;
-    transition: background-color 0.3s ease;
-}
-
-.reset-button:hover {
-    background-color: #b58f28;
-}
-
-.book-details {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	height: 100%;
-}
-
