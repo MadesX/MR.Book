@@ -70,14 +70,17 @@ section {
 	align-items: flex-start;
 	padding: 10px;
 	box-sizing: border-box;
+    min-width: 293px;
 }
 
 .book img {
 	width: 40%;
 	aspect-ratio: 90 / 130;
 	min-width: 90px;
+    max-width: 147px;
 	height: auto;
 	min-height: 130px;
+    max-height: 210px;
 	border-radius: 5px;
 	margin-left: 10px;
 	object-fit: cover;
@@ -100,6 +103,14 @@ section {
 	margin: 5px 0;
 }
 
+.book-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    gap: 10px;
+}
+
 .book-details button {
 	margin-top: auto;
 	align-self: flex-end;
@@ -117,7 +128,31 @@ section {
 	background-color: #388e3c;
 }
 
-@media (max-width: 1190px) {
+.book img.addF, .book a {
+    align-self: flex-end;
+    height: 25px;
+    width: 25px;
+    min-width: 0;
+    min-height: 0;
+    margin-bottom: 0.5px;
+}
+
+.book form button, .book form button img {
+    background-color: white;
+    align-self: flex-end;
+    height: 30px;
+    width: 30px;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+    margin-bottom: -5px;
+}
+
+.book form button:hover {
+	background-color: white;
+}
+
+@media (max-width: 1350px) {
 	.book {
 		width: 45%;
 	}
