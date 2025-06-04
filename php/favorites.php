@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MR Book - Home</title>
-    <link href="favorites.css" rel="stylesheet" />
-    <link href="header1.css" rel="stylesheet" />
-    <link href="footer.css" rel="stylesheet" />
+    <title>מועדפים</title>
+    <link href="../css/favorites.css" rel="stylesheet" />
+    <link href="../css/header.css" rel="stylesheet" />
+    <link href="../css/footer.css" rel="stylesheet" />
 </head>
 <body>
     <?php 
@@ -15,7 +15,7 @@
     if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         echo "<script>
                 alert('חובה להתחבר על מנת לצפות במועדפים');
-                window.location.href = 'Login1.html';
+                window.location.href = '../html/login.html';
             </script>";
         exit();
     }
@@ -54,8 +54,8 @@
                     <h3>" . $row["title"] . "</h3><p>מאת: " . $row["auther"] . "</p><p>" . $row["intro"] . "</p>
                     <div class='book-actions'>
                     <button onclick='alert()'>פרטים נוספים</button>
-                    <a href='favorites_remove.php?book=" . $row["bookID"] . "' title='הסר ממועדפים'><img src='images/remove_from_favorites_icon.png' id='removeF'></a>
-                    <a href='add_to_cart.php' title='הוסף לעגלה'><img src='images/add_to_cart_icon.png' id='addC'></a>
+                    <a href='favoritesRemove.php?book=" . $row["bookID"] . "' title='הסר ממועדפים'><img src='../images/remove_from_favorites_icon.png' id='removeF'></a>
+                    <a href='add_to_cart.php' title='הוסף לעגלה'><img src='../images/add_to_cart_icon.png' id='addC'></a>
                     </div></div></div>";
                 }
             }
@@ -70,8 +70,8 @@
 
     <footer></footer>
 
-    <script src="footer.js"></script>
-    <script src="header1.php"></script>
+    <script src="../java_script/footer.js"></script>
+    <script src="../php/header.php"></script>
 	
 </body>
 </html>
