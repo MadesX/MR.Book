@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>מחשבון ספרים</title>
-    <link href="bookEntry.css" rel="stylesheet" />
-    <link href="bookCalculator.css" rel="stylesheet" />
-    <link href="header1.css" rel="stylesheet" />
-    <link href="footer.css" rel="stylesheet" />
+    <link href="../css/form.css" rel="stylesheet" />
+    <link href="../css/bookCalculator.css" rel="stylesheet" />
+    <link href="../css/header.css" rel="stylesheet" />
+    <link href="../css/footer.css" rel="stylesheet" />
 </head>
 <body>
     <div id="header-placeholder"></div>
 
     <div class="form-container">
         <h1>מחשבון ספרים</h1>
-        <form action="processBooks.php" method="post" id="bookForm">
+        <form action="../php/processBooks.php" method="post" id="bookForm">
             <div id="bookEntries">
                 <div class="book-entry">
                 <input type="text" name="titles[]" placeholder="שם הספר" required>
@@ -30,8 +30,8 @@
 
     <footer></footer>
 
-    <script src="footer.js"></script>
-    <script src="header1.php"></script>
-    <script src="bookCalculator.js"></script>
+    <script src="../java_script/footer.js"></script>
+    <script src="../php/header.php"></script>
+    <script src="../java_script/bookCalculator.js"></script>
 </body>
 </html>
