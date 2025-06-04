@@ -31,16 +31,14 @@ $_SESSION['cart'] = [];
 <head>
     <meta charset="UTF-8">
     <title>תשלום הושלם</title>
-    <link rel="stylesheet" href="cart.css">
-    <link rel="stylesheet" href="payment_complete.css">
+    <link rel="stylesheet" href="../css/cart.css">
+    <link rel="stylesheet" href="../css/paymentComplete.css">
 </head>
 <body>
-
     <div class="confirmation">
         <h2> התשלום הושלם בהצלחה</h2>
         <p>התשלום שלך בסך <?= $total ?> ₪ התקבל.</p>
-        <a href="index1.php">חזרה לעמוד הבית</a>
+        <a href="../index1.php">חזרה לעמוד הבית</a>
     </div>
-
 </body>
 </html>
