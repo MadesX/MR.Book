@@ -1,0 +1,78 @@
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, sans-serif;
+	background: url('../images/bookstore-background.jpg') no-repeat center center fixed;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	color: #333;
+	display: flex;
+	flex-direction: column;
+}
+
+.cart-main {
+  max-width: 800px;
+  margin: auto;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+.cart-title {
+  text-align: center;
+  font-size: 32px;
+  color: white;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.6);
+}
+
+.page-title {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+#cart-summary {
+  margin-top: 30px;
+  font-size: 18px;
+  text-align: center;
+}
+
+#cart-summary button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-weight: bold;
+  background-color: #3f51b5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#cart-summary button:hover {
+  background-color: #303f9f;
+}
+
+.cart-item {
+    max-height: 400px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .cart-main {
+    width: 90%;
+    padding: 15px;
+  }
+}
