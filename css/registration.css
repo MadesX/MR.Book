@@ -7,7 +7,7 @@ html, body {
 body {
 	font-family: Arial, sans-serif;
 	padding: 0;
-	background: url('images/bookstore-background.jpg') no-repeat center center fixed;
+	background: url('../images/bookstore-background.jpg') no-repeat center center fixed;
 	background-size: cover;
 }
 
@@ -77,29 +77,3 @@ input[type="reset"]:hover, .form-container form button:hover {
 	font-size: 0.85rem;
 	color: #666;
 }
-
-
-@media (max-width: 1190px) {
-	.form-container {
-		width: 80%;
-		margin: auto;
-	}
-}
-
-@media (max-width: 600px) {
-	.form-container {
-		width: 100%;
-		padding: 10px;
-		box-sizing: border-box;
-	}
-
-	input, select, textarea {
-		width: 100%;
-	}
-
-	input[type="button"] {
-		width: 100%;
-		margin-right: 0;
-	}
-}
-
