@@ -44,10 +44,10 @@ $_SESSION['order_amount'] = 0;
 <head>
     <meta charset="UTF-8">
     <title>תשלום הושלם</title>
-    <link href="../css/cart.css" rel="stylesheet">
-    <link href="../css/paymentComplete.css rel="stylesheet"">
     <link href="../css/header.css" rel="stylesheet" />
     <link href="../css/footer.css" rel="stylesheet" />
+    <link href="../css/cart.css" rel="stylesheet" />
+    <link href="../css/paymentComplete.css" rel="stylesheet" />
 </head>
 <body>
     <div id="header-placeholder"></div>
