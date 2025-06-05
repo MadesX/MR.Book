@@ -79,7 +79,7 @@ if (isset($_SESSION['order_amount']) && $total != $_SESSION['order_amount']) {
             <form class="checkout-form" method="post" action="paymentComplete.php">
                 <div>
                     <label>שם בעל הכרטיס:</label>
-                    <input type="text" name="card_name" required>
+                    <input type="text" name="card_name" pattern="(?=.*[\p{L}])[ \p{L}]+" title="יש להזין אותיות בעברית או אנגלית בלבד, עם רווחים" required>
                 </div>
 
                 <div>
