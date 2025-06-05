@@ -102,11 +102,20 @@ main {
 		margin-top: 12px;
 	}
 
-	#addC {
-		height: 22px;
-		width: 22px;
-		margin-top: 11px;
+	.addC, img.addC, button.addC {
+        margin: 0px;
+        background-color: transparent;
+		height: 23px;
+		width: 23px;
 	}
+        .book-actions button.addC:hover {
+			background-color: transparent;
+		}
+
+    img.addC {
+        margin-right: -17px;
+        margin-top: -1px;
+    }
 
 @media (max-width: 768px) {
 	.book {
