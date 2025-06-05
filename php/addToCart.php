@@ -14,7 +14,10 @@ if ($conn->connect_error) {
 }
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../html/login.html");
+    echo "<script>
+            alert('עליך להיות מחובר כדי להוסיף לעגלה');
+            window.location.href = '../html/login.html';
+        </script>";
     exit;
 }
 
