@@ -14,16 +14,13 @@ if ($conn->connect_error) {
 
 $_SESSION['order_amount'] = $_POST["amount"];
 
-$sql = "INSERT INTO orders (userID, orderDate, amount, city, street, houseNumber, zipCode, shipping) VALUES (
+$sql = "INSERT INTO orders (userID, orderDate, amount, city, street, houseNumber, zipCode, shipping, paid) VALUES (
 		".$_SESSION['user_id'].",'".$_POST["orderDate"]."',".$_SESSION['order_amount'].",'".$_POST["city"]."','".$_POST["street"].
-		"','".$_POST["houseNumber"]."','".$_POST["zipCode"]."',".$_POST["shipping"].");";
+		"','".$_POST["houseNumber"]."','".$_POST["zipCode"]."',".$_POST["shipping"].", 0 );";
 
 $conn->query($sql);
 $conn->close();
 
-echo "<script>
-		alert('הזמנתך הושלמה בהצלחה');
-		window.location.href = '../index1.php';
-	  </script>";
+header("Location: ../php/checkout.php");
 exit();
 ?>
