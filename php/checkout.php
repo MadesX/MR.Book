@@ -36,6 +36,13 @@ while ($row = $result->fetch_assoc()) {
     $total += $row['subtotal'];
     $books[] = $row;
 }
+
+$showShipping = false;
+if (isset($_SESSION['order_amount']) && $total != $_SESSION['order_amount']) {
+    $showShipping = true;
+    $shippingCost = $_SESSION['order_amount'] - $total;
+    $total = $_SESSION['order_amount'];
+}
 ?>
 
 <!DOCTYPE html>
@@ -62,6 +69,10 @@ while ($row = $result->fetch_assoc()) {
                 <?php foreach ($books as $book): ?>
                     <li><strong><?= htmlspecialchars($book['title']) ?></strong> (x<?= $book['quantity'] ?>) – <?= $book['subtotal'] ?> ₪</li>
                 <?php endforeach; ?>
+
+                <?php if (!empty($books) && $showShipping): ?>
+                    <li><strong>משלוח</strong> – <?= $shippingCost ?> ₪</li>
+                <?php endif; ?>
             </ul>
             <p style="text-align: center;"><strong>סה״כ לתשלום: <?= $total ?> ₪</strong></p>
 
