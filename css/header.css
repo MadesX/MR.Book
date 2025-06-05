@@ -3,6 +3,7 @@ header {
     height: 90px;
     background-color: rgba(255, 255, 255, 0.85);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    min-width: 490px;
 }
 
 .header-left, .header-center, .header-right {
@@ -83,6 +84,7 @@ nav ul {
     justify-content: center;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    min-width: 490px;
 }
 
 nav li {
@@ -104,13 +106,26 @@ nav a {
     margin-top: -20px;
 }
 
-@media (max-width: 768px) {
-    .header-right a img {
-        width: 24px;
-        height: 24px;
+@media (max-width: 620px) {
+    .search-form input[type="text"] {
+        width: 120px;
     }
 
+    .header-right {
+        flex-wrap: wrap;
+        align-items: flex-end;
+        max-width: 120px;
+    }
+
+    .header-right p#greeting {
+        width: 100%;
+        text-align: right;
+        margin: 5px 0 0 0;
+    }
+}
+
+@media (max-width: 520px) {
     .search-form input[type="text"] {
-        width: 100px;
+        width: 80px;
     }
 }
