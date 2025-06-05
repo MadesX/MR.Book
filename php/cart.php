@@ -35,6 +35,7 @@ while ($row = $result->fetch_assoc()) {
     $books[] = $row;
     $total += $row['total_price'];
 }
+$_SESSION['order_amount'] = $total;
 ?>
 
 <!DOCTYPE html>
@@ -66,19 +67,19 @@ while ($row = $result->fetch_assoc()) {
                     מחיר ליחידה: <?= $book['price'] ?> ₪<br />
                     מחיר כולל: <?= $book['total_price'] ?> ₪
 
-                    <form method="POST" action="updateCart.php" style="display:inline;">
+                    <form method="POST" action="../php/updateCart.php" style="display:inline;">
                         <input type="hidden" name="bookID" value="<?= $book['bookID'] ?>">
                         <input type="hidden" name="action" value="increase">
                         <button type="submit">➕</button>
                     </form>
 
-                    <form method="POST" action="updateCart.php" style="display:inline;">
+                    <form method="POST" action="../php/updateCart.php" style="display:inline;">
                         <input type="hidden" name="bookID" value="<?= $book['bookID'] ?>">
                         <input type="hidden" name="action" value="decrease">
                         <button type="submit">➖</button>
                     </form>
 
-                    <form method="POST" action="updateCart.php" style="display:inline;">
+                    <form method="POST" action="../php/updateCart.php" style="display:inline;">
                         <input type="hidden" name="bookID" value="<?= $book['bookID'] ?>">
                         <input type="hidden" name="action" value="remove_all">
                         <button type="submit">🗑</button>
@@ -90,11 +91,11 @@ while ($row = $result->fetch_assoc()) {
             <div id="cart-summary">
                 סה״כ לתשלום: <?= $total ?> ₪
 
-                <form action="checkout.php" method="post" style="margin-top: 10px;">
+                <form action="../php/orderForm.php" method="post" style="margin-top: 10px;">
                     <button type="submit">מעבר לתשלום</button>
                 </form>
 
-                <form action="updateCart.php" method="post" style="margin-top: 10px;">
+                <form action="../php/updateCart.php" method="post" style="margin-top: 10px;">
                     <input type="hidden" name="action" value="clear_cart">
                     <button type="submit" id="clear-cart">רוקן עגלה</button>
                 </form>
