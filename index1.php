@@ -54,7 +54,7 @@
                         <button onclick=\"window.location.href='../php/bookDetails.php?id=" . $row["bookID"] . "'\">פרטים נוספים</button>
                         <form method='post' action='../php/addToCart.php'>
                             <input type='hidden' name='bookID' value='" . $row["bookID"] . "'>
-                            <button type='submit'><img src='../images/add_to_cart_icon.png'></button>
+                            <button type='submit' title='הוסף לעגלה'><img src='../images/add_to_cart_icon.png'></button>
                         </form>
                         <a href='../php/favoritesAdd.php?book=" . $row["bookID"] . "' title='הוסף למועדפים'><img src='../images/add_to_favorites_icon.png' class='addF'></a>
                     </div>
@@ -77,7 +77,7 @@
                         <button onclick=\"window.location.href='../php/bookDetails.php?id=" . $row["bookID"] . "'\">פרטים נוספים</button>
                         <form method='post' action='../php/addToCart.php'>
                             <input type='hidden' name='bookID' value='" . $row["bookID"] . "'>
-                            <button type='submit'><img src='../images/add_to_cart_icon.png'></button>
+                            <button type='submit' title='הוסף לעגלה'><img src='../images/add_to_cart_icon.png'></button>
                         </form>
                         <a href='../php/favoritesAdd.php?book=" . $row["bookID"] . "' title='הוסף למועדפים'><img src='../images/add_to_favorites_icon.png' class='addF'></a>
                     </div>
