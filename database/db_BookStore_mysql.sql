@@ -92,6 +92,7 @@ CREATE TABLE orders (
     houseNumber NVARCHAR(3) NOT NULL CHECK (houseNumber REGEXP '^[0-9]+$'),
     zipCode NVARCHAR(8) NOT NULL CHECK (zipCode REGEXP '^[0-9]+$'),
     shipping bit DEFAULT 0,
+    paid bit DEFAULT 0,
     FOREIGN KEY (userID) REFERENCES `user`(userID)
 );
 
