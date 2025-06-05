@@ -12,23 +12,31 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../html/login.html");
+    exit;
+}
+
+$userID = $_SESSION['user_id'];
 $books = [];
 $total = 0;
 
-if (!empty($cart)) {
-    $ids = implode(",", array_keys($cart));
-    $result = $conn->query("SELECT * FROM book WHERE bookID IN ($ids)");
-    while ($row = $result->fetch_assoc()) {
-        $bookID = $row['bookID'];
-        $quantity = $cart[$bookID];
-        $row['quantity'] = $quantity;
-        $row['total_price'] = $quantity * $row['price'];
-        $books[] = $row;
-        $total += $row['total_price'];
-    }
+$sql = "SELECT b.bookID, b.title, b.price, ci.quantity
+        FROM cart_items ci
+        JOIN book b ON ci.bookID = b.bookID
+        WHERE ci.userID = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $userID);
+$stmt->execute();
+$result = $stmt->get_result();
+
+while ($row = $result->fetch_assoc()) {
+    $row['total_price'] = $row['quantity'] * $row['price'];
+    $books[] = $row;
+    $total += $row['total_price'];
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -45,42 +53,52 @@ if (!empty($cart)) {
         <h1 class="cart-title">🛒 עגלת הקניות שלך</h1>
 
         <?php if (empty($books)): ?>
-        <p style="text-align:center;">העגלה שלך ריקה.</p>
+        <div class="cart-block">
+            <p class="empty-text">העגלה שלך ריקה.</p>
+        </div>
         <?php else: ?>
-        <div class="cart-items">
-            <?php foreach ($books as $book): ?>
-            <div class="cart-item">
-                <strong><?= htmlspecialchars($book['title']) ?></strong><br />
-                כמות: <?= $book['quantity'] ?><br />
-                מחיר ליחידה: <?= $book['price'] ?> ₪<br />
-                מחיר כולל: <?= $book['total_price'] ?> ₪
+        <div class="cart-block">
+            <div class="cart-items">
+                <?php foreach ($books as $book): ?>
+                <div class="cart-item">
+                    <strong><?= htmlspecialchars($book['title']) ?></strong><br />
+                    כמות: <?= $book['quantity'] ?><br />
+                    מחיר ליחידה: <?= $book['price'] ?> ₪<br />
+                    מחיר כולל: <?= $book['total_price'] ?> ₪
 
-                <form method="POST" action="updateCart.php" style="display:inline;">
-                <input type="hidden" name="bookID" value="<?= $book['bookID'] ?>">
-                <input type="hidden" name="action" value="increase">
-                <button type="submit">➕</button>
+                    <form method="POST" action="updateCart.php" style="display:inline;">
+                        <input type="hidden" name="bookID" value="<?= $book['bookID'] ?>">
+                        <input type="hidden" name="action" value="increase">
+                        <button type="submit">➕</button>
+                    </form>
+
+                    <form method="POST" action="updateCart.php" style="display:inline;">
+                        <input type="hidden" name="bookID" value="<?= $book['bookID'] ?>">
+                        <input type="hidden" name="action" value="decrease">
+                        <button type="submit">➖</button>
+                    </form>
+
+                    <form method="POST" action="updateCart.php" style="display:inline;">
+                        <input type="hidden" name="bookID" value="<?= $book['bookID'] ?>">
+                        <input type="hidden" name="action" value="remove_all">
+                        <button type="submit">🗑</button>
+                    </form>
+                </div>
+                <?php endforeach; ?>
+            </div>
+
+            <div id="cart-summary">
+                סה״כ לתשלום: <?= $total ?> ₪
+
+                <form action="checkout.php" method="post" style="margin-top: 10px;">
+                    <button type="submit">מעבר לתשלום</button>
                 </form>
 
-                <form method="POST" action="updateCart.php" style="display:inline;">
-                <input type="hidden" name="bookID" value="<?= $book['bookID'] ?>">
-                <input type="hidden" name="action" value="decrease">
-                <button type="submit">➖</button>
-                </form>
-
-                <form method="POST" action="updateCart.php" style="display:inline;">
-                <input type="hidden" name="bookID" value="<?= $book['bookID'] ?>">
-                <input type="hidden" name="action" value="remove_all">
-                <button type="submit">🗑</button>
+                <form action="updateCart.php" method="post" style="margin-top: 10px;">
+                    <input type="hidden" name="action" value="clear_cart">
+                    <button type="submit" id="clear-cart">רוקן עגלה</button>
                 </form>
             </div>
-            <?php endforeach; ?>
-        </div>
-
-        <div id="cart-summary">
-            סה״כ לתשלום: <?= $total ?> ₪
-            <form action="checkout.php" method="post">
-            <button type="submit">מעבר לתשלום</button>
-            </form>
         </div>
         <?php endif; ?>
     </main>
