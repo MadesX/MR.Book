@@ -53,9 +53,12 @@
                     echo "<div class='book'><img src=" . $row["picture"] . " alt='Cover Image'><div class='book-details'>
                     <h3>" . $row["title"] . "</h3><p>מאת: " . $row["auther"] . "</p><p>" . $row["intro"] . "</p>
                     <div class='book-actions'>
-                    <button onclick='alert()'>פרטים נוספים</button>
+                    <button onclick=\"window.location.href='../php/bookDetails.php?id=" . $row["bookID"] . "'\">פרטים נוספים</button>
                     <a href='favoritesRemove.php?book=" . $row["bookID"] . "' title='הסר ממועדפים'><img src='../images/remove_from_favorites_icon.png' id='removeF'></a>
-                    <a href='add_to_cart.php' title='הוסף לעגלה'><img src='../images/add_to_cart_icon.png' id='addC'></a>
+                    <form method='post' action='../php/addToCart.php' class='addC'>
+                            <input type='hidden' name='bookID' value='" . $row["bookID"] . "'>
+                            <button type='submit' class='addC' title='הוסף לעגלה'><img src='../images/add_to_cart_icon.png' class='addC'></button>
+                    </form>
                     </div></div></div>";
                 }
             }
