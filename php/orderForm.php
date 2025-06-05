@@ -3,9 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>הזמנה</title>
-	<link href="../css/form.css" rel="stylesheet">
+	<link href="../css/form.css" rel="stylesheet" />
+    <link href="../css/header.css" rel="stylesheet" />
+    <link href="../css/footer.css" rel="stylesheet" />
 </head>
 <body>
+    <div id="header-placeholder"></div>
+
 	<div class="form-container">
 		<form action="orderSubmit.php" method="POST">
 	        <h1>הזמנה</h1>
@@ -39,6 +43,10 @@
 		</form>
 	</div>
 
+    <footer></footer>
+
+    <script src="../java_script/footer.js"></script>
+    <script src="../php/header.php"></script>
     <script>
         const shippingSelect = document.querySelector('select');
         const amountDisplay = document.getElementById('amountDisplay');
