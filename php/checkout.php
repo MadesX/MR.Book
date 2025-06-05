@@ -1,10 +1,16 @@
 <?php
 session_start();
 
+if (!isset($_SESSION['user_id'])) {
+    header("Location: ../html/login.html");
+    exit;
+}
+
 $servername = "sql206.byethost16.com";
 $username = "b16_38703978";
 $password = "t8gwx71y";
 $dbname = "b16_38703978_BookStore";
+
 $conn = new mysqli($servername, $username, $password, $dbname);
 $conn->set_charset("utf8");
 
@@ -12,21 +18,23 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+$userID = $_SESSION['user_id'];
 $books = [];
 $total = 0;
 
-if (!empty($cart)) {
-    $ids = implode(",", array_map('intval', array_keys($cart)));
-    $result = $conn->query("SELECT * FROM book WHERE bookID IN ($ids)");
-    while ($row = $result->fetch_assoc()) {
-        $bookID = $row['bookID'];
-        $quantity = $cart[$bookID];
-        $row['quantity'] = $quantity;
-        $row['subtotal'] = $row['price'] * $quantity;
-        $books[] = $row;
-        $total += $row['subtotal'];
-    }
+$sql = "SELECT b.bookID, b.title, b.price, ci.quantity 
+        FROM cart_items ci
+        JOIN book b ON ci.bookID = b.bookID
+        WHERE ci.userID = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $userID);
+$stmt->execute();
+$result = $stmt->get_result();
+
+while ($row = $result->fetch_assoc()) {
+    $row['subtotal'] = $row['price'] * $row['quantity'];
+    $total += $row['subtotal'];
+    $books[] = $row;
 }
 ?>
 
@@ -46,35 +54,42 @@ if (!empty($cart)) {
     <main class="cart-main">
         <h1 class="cart-title">עמוד תשלום</h1>
 
+        <div class="cart-block">
         <?php if (empty($books)): ?>
-            <p style="text-align:center;">אין ספרים בעגלה.</p>
+            <p class="empty-text">אין ספרים בעגלה.</p>
         <?php else: ?>
-            <ul>
+            <ul style="list-style: none; text-align: center; padding: 0;">
                 <?php foreach ($books as $book): ?>
-                    <li>
-                        <strong><?= htmlspecialchars($book['title']) ?></strong>
-                        (x<?= $book['quantity'] ?>) - <?= $book['subtotal'] ?> ₪
-                    </li>
+                    <li><strong><?= htmlspecialchars($book['title']) ?></strong> (x<?= $book['quantity'] ?>) – <?= $book['subtotal'] ?> ₪</li>
                 <?php endforeach; ?>
             </ul>
-            <p><strong>סה״כ לתשלום: <?= $total ?> ₪</strong></p>
+            <p style="text-align: center;"><strong>סה״כ לתשלום: <?= $total ?> ₪</strong></p>
 
             <form class="checkout-form" method="post" action="paymentComplete.php">
-                <label>שם בעל הכרטיס:</label>
-                <input type="text" name="card_name" pattern="(?=.*[\p{L}])[ \p{L}]+" title="יש להזין אותיות בעברית או אנגלית בלבד, עם רווחים" required>
+                <div>
+                    <label>שם בעל הכרטיס:</label>
+                    <input type="text" name="card_name" required>
+                </div>
 
-                <label>מספר כרטיס:</label>
-                <input type="tel" name="card_number" inputmode="numeric" pattern="\d{16}" maxlength="16" title="יש להזין 16 ספרות בדיוק" required>
+                <div>
+                    <label>מספר כרטיס:</label>
+                    <input type="tel" name="card_number" pattern="\d{16}" maxlength="16" required>
+                </div>
 
-                <label>תוקף (MM/YY):</label>
-                <input type="text" name="expiry" pattern="\d{2}/\d{2}" placeholder="MM/YY" title="יש להזין תוקף בפורמט MM/YY" required>
+                <div>
+                    <label>תוקף (MM/YY):</label>
+                    <input type="text" name="expiry" placeholder="MM/YY" pattern="\d{2}/\d{2}" required>
+                </div>
 
-                <label>CVV:</label>
-                <input type="tel" name="cvv" inputmode="numeric" pattern="\d{3}" maxlength="3" title="יש להזין 3 ספרות בדיוק" required>
+                <div>
+                    <label>CVV:</label>
+                    <input type="tel" name="cvv" pattern="\d{3}" maxlength="3" required>
+                </div>
 
                 <button type="submit">בצע תשלום</button>
             </form>
         <?php endif; ?>
+        </div>
     </main>
 
     <footer></footer>
