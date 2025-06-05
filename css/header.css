@@ -25,12 +25,12 @@ header {
     right: 20px;
     display: flex;
     align-items: center; 
+    gap: 20px;
 }
 
 header div:nth-child(3) a img {
     height: 20px;
     width: 20px;
-    margin-left: 20px;
 }
 
 header div:nth-child(3) p {
@@ -117,10 +117,14 @@ nav a {
         max-width: 120px;
     }
 
+    header div:nth-child(3) a img {
+        margin-top: 8px;
+    }
+
     .header-right p#greeting {
         width: 100%;
         text-align: right;
-        margin: 5px 0 0 0;
+        margin: -8px 0 0 0;
     }
 }
 
