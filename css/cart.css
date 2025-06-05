@@ -14,11 +14,11 @@ body {
 }
 
 .cart-main {
-    width: 95%;
+    width: 80%;
     max-width: none;
     min-height: 90vh;
-    margin: 40px auto;
-    padding: 30px;
+    margin: auto;
+    padding: 20px;
     background: rgba(255, 255, 255, 0.93);
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
@@ -27,7 +27,7 @@ body {
 .cart-block {
     background: rgba(255, 255, 255, 0.97);
     padding: 30px;
-    margin: 0 auto;
+    margin: auto;
     max-width: 800px;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0,0,0,0.15);
