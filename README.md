@@ -1,4 +1,4 @@
-# MR.Book Web Platform
+# MR. Book Web Platform
 
 A full-stack web application for a bookstore, enabling browsing, filtering, and purchasing of books online.
 Includes shopping cart functionality, user login, admin panel, responsive design, and a clean user experience.
