@@ -60,6 +60,8 @@ CREATE TABLE `admin` (
     password VARCHAR(50)
 );
 
+INSERT INTO `admin` (userID, userName, password) VALUES (0, 'admin', 'admin');
+
 CREATE TABLE favorites (
     userID INT,
     bookID INT,
