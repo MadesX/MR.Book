@@ -1,5 +1,10 @@
+<html lang="he">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head>
+<body>
+
 <?php
 session_start();
+header("Content-Type: text/html; charset=utf-8");
 
 $servername = "sql206.byethost16.com";
 $username = "b16_38703978";
@@ -7,7 +12,7 @@ $password = "t8gwx71y";
 $dbname = "b16_38703978_BookStore";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
-$conn->set_charset("utf8");
+$conn->set_charset("utf8mb4");
 if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
@@ -24,3 +29,6 @@ $conn->close();
 header("Location: ../php/checkout.php");
 exit();
 ?>
+
+</body>
+</html>
