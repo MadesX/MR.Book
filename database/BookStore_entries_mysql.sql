@@ -2,8 +2,6 @@
 INSERT INTO categories (category) VALUES
 ('SF'), ('F'), ('R'), ('B'), ('Hi'), ('Hr'), ('M'), ('T'), ('A'), ('K'), ('C');
 
-INSERT INTO `admin` (userID, userName, password) VALUES (0, 'admin', 'admin');
-
 -- Users
 INSERT INTO `user` (fname, lname, dateOfBirth, userName, password, gender, email, phone, country, website, favoriteNumber, favoriteColor, contactTime, profilePicture, about, rating) VALUES
 ('Alice', 'Smith', '1990-04-15', 'asmith', 'Alice@2023!', 'F', 'alice26@example.com', '0123456699', 'USA', 'https://aliceblog.com', 7, '#FF5733', '09:30:00', 'alice_profile.jpg', 'Love to travel and write.', 8),
