@@ -1,11 +1,11 @@
-# MR Bookstore Web Platform
+# MR.Book Web Platform
 
-A full-stack web application for browsing, filtering, and purchasing books online.  
+A full-stack web application for a bookstore, enabling browsing, filtering, and purchasing of books online.
 Includes shopping cart functionality, user login, admin panel, responsive design, and a clean user experience.
 
 # Project Overview
 
-MR Bookstore is an educational project simulating a complete online bookstore.  
+MR.Books is an educational project simulating a complete online bookstore.  
 Users can browse books, filter by category/language, view detailed descriptions, mark favorites, add items to a cart, and proceed to checkout.  
 Administrators can manage the book database through custom PHP scripts.  
 
