@@ -14,6 +14,32 @@ if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
 }
 
+$username = $_POST['username'];
+$email = $_POST['email'];
+$phone = $_POST['phone'];
+
+// Check unique fields
+$check_sql = "SELECT userName, email, phone FROM user WHERE userName = '$username' OR email = '$email' OR phone = '$phone'";
+$result = $conn->query($check_sql);
+
+$error = "";
+if ($result && $result->num_rows > 0) {
+    while ($row = $result->fetch_assoc()) {
+        if ($row['userName'] === $username) $error .= "שם המשתמש כבר קיים\n";
+        if ($row['email'] === $email) $error .= "האימייל כבר קיים\n";
+        if ($row['phone'] === $phone) $error .= "מספר הטלפון כבר קיים\n";
+ 
+        $safeError = json_encode($error);  // safely encodes as a JS string
+        echo "<script>
+            alert($safeError);
+            window.history.back();
+        </script>";
+        exit();
+
+    }
+}
+
+// Normal registration process
 $country = ($_POST['country'] !== '') ? "'".$_POST['country']."'" : "NULL";
 $website = $_POST['website'] !== '' ? "'".$_POST['website']."'" : "NULL";
 $favnumber = $_POST['favnumber'] !== '' ? (int)$_POST['favnumber'] : "NULL";
@@ -27,13 +53,14 @@ $datetime = $datetime = date("Y-m-d H:i:s");
 
 $sql="INSERT INTO user (fname, lname, dateOfBirth, userName, password, gender, email, phone, country, website, 
 	favoriteNumber, favoriteColor, contactTime, profilePicture, about, rating, registrationDate) VALUES (
-	'".$_POST["fname"]."','".$_POST["lname"]."','".$_POST["dob"]."','".$_POST["username"]."','".$_POST["password"].
-	"','".$_POST["gender"]."','".$_POST["email"]."','".$_POST["phone"]."',".$country.",".$website.
-	",".$favnumber.",".$favcolor.",".$time.",".$pic.",".$about.",".$rating.",'".$datetime."');";
+	'".$_POST["fname"]."','".$_POST["lname"]."','".$_POST["dob"]."','".$username."','".$_POST["password"].
+	"','".$_POST["gender"]."','".$email."','".$phone."',".$country.",".$website.",".$favnumber.",".$favcolor.","
+    .$time.",".$pic.",".$about.",".$rating.",'".$datetime."');";
 
 $conn->query($sql);
 $userID = $conn->insert_id;
 
+// Create new shopping cart for the user
 $sql2 = "INSERT INTO shopping_cart (userID) VALUES ('".$userID."');";
 $conn->query($sql2);
 
