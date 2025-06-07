@@ -37,7 +37,7 @@ $conn->close();
 
 echo "<script>
 		alert('הספר - " . $title . " הוכנס בהצלחה למערכת');
-		window.location.href = '../index1.php';
+		window.location.href = '../index.php';
 	  </script>";
 exit();
 ?>
