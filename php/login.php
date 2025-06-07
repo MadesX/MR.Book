@@ -27,7 +27,7 @@ if ($result->num_rows > 0) {
     $_SESSION['user_id'] = $row["userID"];
     $_SESSION['user_name'] = $row["fname"];
 
-    header("Location: ../index1.php");
+    header("Location: ../index.php");
     exit();
 } else {
     echo "<script>
