@@ -54,7 +54,7 @@ $_SESSION['order_amount'] = 0;
     <div class="confirmation">
         <h2> התשלום הושלם בהצלחה</h2>
         <p>התשלום שלך בסך <?= $total ?> ₪ התקבל.</p>
-        <a href="../index.php">חזרה לעמוד הבית</a>
+        <a href="../">חזרה לעמוד הבית</a>
     </div>
 
     <footer></footer>
