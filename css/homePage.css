@@ -9,8 +9,9 @@ body {
 	background: url('../images/bookstore-background.jpg') no-repeat center center fixed;
 	background-size: cover;
 	color: #333;
-    display: flex;
+    	display: flex;
 	flex-direction: column;
+	min-width: 491px;
 }
 
 #header-placeholder, footer {
@@ -25,7 +26,7 @@ main {
 	display: flex;
 	flex-direction: column;
 	box-sizing: border-box;
-    margin-top: -20px;
+    	margin-top: -20px;
 }
 
 .section-title {
@@ -71,17 +72,17 @@ section {
 	align-items: flex-start;
 	padding: 10px;
 	box-sizing: border-box;
-    min-width: 293px;
+    	min-width: 293px;
 }
 
 .book img {
 	width: 40%;
 	aspect-ratio: 90 / 130;
 	min-width: 90px;
-    max-width: 147px;
+    	max-width: 147px;
 	height: auto;
 	min-height: 130px;
-    max-height: 210px;
+    	max-height: 210px;
 	border-radius: 5px;
 	margin-left: 10px;
 	object-fit: cover;
