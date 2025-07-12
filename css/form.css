@@ -9,8 +9,9 @@ body {
 	background: url('../images/bookstore-background.jpg') no-repeat center center fixed;
 	background-size: cover;
 	color: #333;
-    display: flex;
+    	display: flex;
 	flex-direction: column;
+	min-width: 491px;
 }
 
 h1 {
@@ -39,16 +40,16 @@ h1 {
 	padding: 8px;
 	margin-top: 5px;
 	box-sizing: border-box;
-    margin-bottom: 15px;
+    	margin-bottom: 15px;
 }
 
 form fieldset {
 	display: flex;
 	flex-wrap: wrap;
 	gap: 10px 20px;
-    padding: 8px;
+    	padding: 8px;
 	margin-top: 15px;
-    margin-bottom: 15px;
+    	margin-bottom: 15px;
 }
 
 form fieldset label {
